@@ -43,7 +43,7 @@ export const Container = styled.div`
 
     p {
       font-size: 14px;
-      max-width: 450px;
+      max-width: 850px;
     }
 
     img {
