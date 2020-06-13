@@ -61,6 +61,11 @@ export const Content = styled.div`
         &:hover {
           opacity: 1;
         }
+
+        &.active {
+          font-weight: bold;
+          opacity: 1;
+        }
       }
     }
   }

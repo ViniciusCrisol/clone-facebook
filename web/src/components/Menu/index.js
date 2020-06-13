@@ -1,6 +1,7 @@
 import React from 'react';
 import { GrFacebook } from 'react-icons/gr';
 import { FiBookOpen, FiMessageSquare, FiUser, FiUsers } from 'react-icons/fi';
+import { NavLink } from 'react-router-dom';
 
 import { Container, Content } from './styles';
 
@@ -14,24 +15,24 @@ function Menu() {
           <h4>Menu</h4>
 
           <li>
-            <a href=''>
+            <NavLink exact to='/'>
               <FiBookOpen size={15} /> News
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href=''>
+            <NavLink to='/messages'>
               <FiMessageSquare size={15} /> Messages
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href=''>
+            <NavLink to='/friends'>
               <FiUser size={15} /> Friends
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href=''>
+            <NavLink to='/communities'>
               <FiUsers size={15} /> Communities
-            </a>
+            </NavLink>
           </li>
         </ul>
       </Content>
