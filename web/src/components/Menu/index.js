@@ -8,10 +8,13 @@ import {
   FiPaperclip,
 } from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../../Hooks/AuthContext';
 
 import { Container, Content } from './styles';
 
 function Menu() {
+  const { user } = useAuth();
+
   return (
     <Container>
       <Content>
@@ -23,6 +26,7 @@ function Menu() {
           <li>
             <NavLink exact to='/profile'>
               <FiPaperclip size={15} /> Profile
+              <span>{user && <>({user.split(' ')[0]})</>}</span>
             </NavLink>
           </li>
           <li>

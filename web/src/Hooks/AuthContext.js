@@ -23,7 +23,7 @@ function AuthProvider({ children }) {
     // });
     //  const { token, user } = response.data;
     const token = 123;
-    const user = `email: ${email} password ${password}`;
+    const user = 'Elon Musk';
 
     console.log(user);
 

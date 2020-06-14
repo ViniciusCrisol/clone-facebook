@@ -42,6 +42,14 @@ export const Content = styled.div`
     li {
       margin-top: 30px;
 
+      span {
+        color: #454545;
+        font-size: 12px;
+
+        margin-left: 10px;
+        opacity: 0.7;
+      }
+
       a {
         font-size: 18px;
         font-weight: Medium;
