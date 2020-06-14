@@ -16,25 +16,22 @@ function AuthProvider({ children }) {
     return {};
   });
 
-  const signIn = useCallback(
-    async (/*{ email, password }*/) => {
-      // const response = await api.post('sessions', {
-      //   email,
-      //   password,
-      // });
-      //  const { token, user } = response.data;
-      const token = 123;
-      const user = 'vinicin';
+  const signIn = useCallback(async ({ email, password }) => {
+    // const response = await api.post('sessions', {
+    //   email,
+    //   password,
+    // });
+    //  const { token, user } = response.data;
+    const token = 123;
+    const user = `email: ${email} password ${password}`;
 
-      console.log('ammor');
+    console.log(user);
 
-      localStorage.setItem('@Facecook:token', token);
-      localStorage.setItem('@Facecook:user', JSON.stringify(user));
-      // api.defaults.headers.authorization = `Bearer ${token}`;
-      setData({ token, user });
-    },
-    []
-  );
+    localStorage.setItem('@Facecook:token', token);
+    localStorage.setItem('@Facecook:user', JSON.stringify(user));
+    // api.defaults.headers.authorization = `Bearer ${token}`;
+    setData({ token, user });
+  }, []);
 
   const signOut = useCallback(() => {
     localStorage.removeItem('@Facecook:token');
