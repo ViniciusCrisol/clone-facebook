@@ -1,6 +1,12 @@
 import React from 'react';
 import { GrFacebook } from 'react-icons/gr';
-import { FiBookOpen, FiMessageSquare, FiUser, FiUsers } from 'react-icons/fi';
+import {
+  FiBookOpen,
+  FiMessageSquare,
+  FiUser,
+  FiUsers,
+  FiPaperclip,
+} from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
 
 import { Container, Content } from './styles';
@@ -14,6 +20,11 @@ function Menu() {
         <ul>
           <h4>Menu</h4>
 
+          <li>
+            <NavLink exact to='/profile'>
+              <FiPaperclip size={15} /> Profile
+            </NavLink>
+          </li>
           <li>
             <NavLink exact to='/'>
               <FiBookOpen size={15} /> News
