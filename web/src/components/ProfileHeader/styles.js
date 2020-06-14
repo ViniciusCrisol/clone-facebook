@@ -52,7 +52,7 @@ export const Container = styled.div`
             background: none;
             border: 0;
 
-            font-size: 23px;
+            font-size: 18px;
 
             line-height: 25px;
             font-weight: Regular;
@@ -62,9 +62,6 @@ export const Container = styled.div`
           &.active {
             button {
               color: #454545;
-
-              padding-bottom: 26px;
-              border-bottom: 2px solid #5085e8;
             }
           }
 

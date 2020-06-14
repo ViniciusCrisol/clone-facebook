@@ -26,7 +26,7 @@ function Menu() {
             </NavLink>
           </li>
           <li>
-            <NavLink exact to='/'>
+            <NavLink exact to='/feed'>
               <FiBookOpen size={15} /> News
             </NavLink>
           </li>

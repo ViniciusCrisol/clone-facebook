@@ -5,16 +5,19 @@ import Routes from './routes';
 import GlobalStyles from './styles/global';
 
 import Content from './components/Content';
-import Header from './components/Menu';
+import Menu from './components/Menu';
+
+import AppProvider from './Hooks';
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-
-      <Content>
-        <Routes />
-      </Content>
+      <AppProvider>
+        <Menu />
+        <Content>
+          <Routes />
+        </Content>
+      </AppProvider>
 
       <GlobalStyles />
     </BrowserRouter>
