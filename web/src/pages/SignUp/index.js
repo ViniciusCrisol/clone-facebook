@@ -15,17 +15,14 @@ function SignUp() {
   async function handleSubmit(data) {
     try {
       const schema = Yup.object().shape({
-        name: Yup.string().required('Nome obrigatório'),
+        name: Yup.string().required('Name is required'),
         email: Yup.string()
-          .required('E-mail obrigatório')
-          .email('Digite um e-mail válido'),
-        password: Yup.string().min(
-          6,
-          'Digite uma senha de no mínimo 6 dígitos'
-        ),
+          .required('E-mail is required')
+          .email('Enter a valid email address'),
+        password: Yup.string().min(6, 'Enter a password of at least 6 digits'),
         confirmPassword: Yup.string().oneOf(
           [Yup.ref('password'), null],
-          'Passwords must match'
+          'Passwords does not match'
         ),
       });
 
