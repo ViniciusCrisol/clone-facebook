@@ -8,7 +8,9 @@ export default {
     filename(request, file, callback) {
       const hash = crypto.randomBytes(6).toString('hex');
 
-      const fileName = `${hash}-${file.originalname}`;
+      const name = file.originalname.replace(/\s/g, '');
+
+      const fileName = `${hash}-${name}`;
 
       callback(null, fileName);
     },

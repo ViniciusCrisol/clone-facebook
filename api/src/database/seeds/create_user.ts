@@ -2,9 +2,9 @@ import Knex from 'knex';
 
 export async function seed(knex: Knex) {
   await knex('users').insert({
-    avatar: 'https://api.adorable.io/avatars/285/abott@adorable.png',
+    avatar: '_default.png',
     name: 'Vinícius Crisol',
-    email: 'vinicius.crisol@etec.sp.gov.br',
+    email: 'admin.crisol@admin.com',
     password_hash: '123',
     gender: 'M',
   });

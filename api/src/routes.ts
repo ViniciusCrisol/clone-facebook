@@ -2,13 +2,13 @@ import express from 'express';
 import multer from 'multer';
 import multerConfig from './config/multer';
 
-// import SessionController from './controllers/SessionController';
+import UsersController from './controllers/UsersController';
 
 const routes = express.Router();
 const upload = multer(multerConfig);
 
-// const SessionController = new SessionController();
+const userController = new UsersController();
 
-// routes.post('/user', userController.index);
+routes.post('/create-user', upload.single('image'), userController.store);
 
 export default routes;
