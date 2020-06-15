@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
 import api from '../../services/api';
@@ -37,8 +38,10 @@ function SignUp() {
       await api.post('create-user', { name, email, password });
 
       history.push('/');
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      error.errors.map((err) => {
+        toast(err);
+      });
     }
   }
 

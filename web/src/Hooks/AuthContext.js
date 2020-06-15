@@ -1,4 +1,6 @@
 import React, { createContext, useCallback, useState, useContext } from 'react';
+import { toast } from 'react-toastify';
+
 import api from '../services/api';
 
 const AuthContext = createContext({});
@@ -18,21 +20,25 @@ function AuthProvider({ children }) {
   });
 
   const signIn = useCallback(async ({ email, password }) => {
-    const response = await api.post('create-session', {
-      email,
-      password,
-    });
+    try {
+      const response = await api.post('create-session', {
+        email,
+        password,
+      });
 
-    const { token, user } = response.data;
+      const { token, user } = response.data;
 
-    console.log(user);
+      console.log(user);
 
-    localStorage.setItem('@Facecook:token', token);
-    localStorage.setItem('@Facecook:user', JSON.stringify(user));
+      localStorage.setItem('@Facecook:token', token);
+      localStorage.setItem('@Facecook:user', JSON.stringify(user));
 
-    api.defaults.headers.authorization = `Bearer ${token}`;
+      api.defaults.headers.authorization = `Bearer ${token}`;
 
-    setData({ token, user });
+      setData({ token, user });
+    } catch (error) {
+      toast(error.response.data.error);
+    }
   }, []);
 
   const signOut = useCallback(() => {
