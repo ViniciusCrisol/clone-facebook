@@ -21,7 +21,7 @@ export const Content = styled.div`
 
   position: relative;
 
-  section {
+  > section {
     width: 60px;
     height: 60px;
 
@@ -35,10 +35,44 @@ export const Content = styled.div`
   }
 
   ul {
-    margin-top: 100px;
+    margin-top: 50px;
 
-    h4 {
-      font-size: 18px;
+    > div {
+      h4 {
+        margin-top: 30px;
+        font-size: 18px;
+      }
+
+      button {
+        margin-top: 30px;
+
+        display: flex;
+        align-items: center;
+
+        border: 0;
+        background: none;
+
+        font-size: 18px;
+        font-weight: Medium;
+        color: #454545;
+
+        opacity: 0.7;
+
+        svg {
+          margin-right: 10px;
+          color: #5085e8;
+          transition: 200ms ease;
+        }
+
+        &:hover {
+          opacity: 1;
+
+          svg {
+            transform: scale(1.2);
+            color: lightcoral;
+          }
+        }
+      }
     }
 
     li {

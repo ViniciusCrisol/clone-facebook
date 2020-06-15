@@ -1,5 +1,6 @@
 import React from 'react';
 import { GrFacebookOption } from 'react-icons/gr';
+import { BsBoxArrowLeft } from 'react-icons/bs';
 import {
   FiBookOpen,
   FiMessageSquare,
@@ -13,7 +14,7 @@ import { useAuth } from '../../Hooks/AuthContext';
 import { Container, Content } from './styles';
 
 function Menu() {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
 
   return (
     <Container>
@@ -23,8 +24,15 @@ function Menu() {
         </section>
 
         <ul>
-          <h4>Menu</h4>
-
+          <div>
+            <h4>Menu</h4>
+            {user && (
+              <button onClick={signOut}>
+                <BsBoxArrowLeft size={20} />
+                Sign Out
+              </button>
+            )}
+          </div>
           <li>
             <NavLink exact to='/profile'>
               <FiPaperclip size={15} /> Profile
