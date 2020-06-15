@@ -2,14 +2,44 @@ import React from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import * as Yup from 'yup';
+
+import api from '../../services/api';
 
 import Container from '../../styles/form';
 
 function SignUp() {
   const history = useHistory();
 
-  function handleSubmit() {
-    history.push('/');
+  async function handleSubmit(data) {
+    try {
+      const schema = Yup.object().shape({
+        name: Yup.string().required('Nome obrigatório'),
+        email: Yup.string()
+          .required('E-mail obrigatório')
+          .email('Digite um e-mail válido'),
+        password: Yup.string().min(
+          6,
+          'Digite uma senha de no mínimo 6 dígitos'
+        ),
+        confirmPassword: Yup.string().oneOf(
+          [Yup.ref('password'), null],
+          'Passwords must match'
+        ),
+      });
+
+      await schema.validate(data, {
+        abortEarly: false,
+      });
+
+      const { name, email, password } = data;
+
+      await api.post('create-user', { name, email, password });
+
+      history.push('/');
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
@@ -20,7 +50,7 @@ function SignUp() {
         <Input name='email' type='email' placeholder='E-mail' />
         <Input name='password' type='password' placeholder='Password' />
         <Input
-          name='confirm-password'
+          name='confirmPassword'
           type='password'
           placeholder='Comfirm password'
         />

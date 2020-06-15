@@ -9,14 +9,13 @@ class ItemsController {
       name: Yup.string().required(),
       email: Yup.string().email().required(),
       password: Yup.string().required().min(6),
-      gender: Yup.string().required(),
     });
 
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validation fails' });
     }
 
-    const { name, email, password, gender } = req.body;
+    const { name, email, password } = req.body;
 
     const userExists = await knex('users').where('email', email).first();
 
@@ -26,24 +25,21 @@ class ItemsController {
 
     const password_hash = await bcrypt.hash(password, 8);
 
-    const avatar = !req.file ? '_default.png' : req.file.filename;
+    const avatar = '_default.png';
+
+    const bio = 'Hey there! I am using Facebeook';
 
     const user = {
       name,
       email,
       password_hash,
-      gender,
       avatar,
+      bio,
     };
 
     await knex('users').insert(user);
 
-    const serializedUser = {
-      ...user,
-      avatar_url: `http://192.168.100.6:3333/uploads/${user.avatar}`,
-    };
-
-    return res.json(serializedUser);
+    return res.json({ ok: true });
   }
 }
 

@@ -2,12 +2,14 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  max-height: 250px;
+  align-items: center;
+
+  max-height: 220px;
 
   border-bottom: 2px solid #ebebeb;
 
   img {
-    height: 170px;
+    height: 150px;
     border-radius: 50%;
   }
 

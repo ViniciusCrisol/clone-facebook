@@ -13,11 +13,7 @@ function ProfileHeader() {
       <div>
         <main>
           <h1>{user.name}</h1>
-          <p>
-            Btw, SpaceX is no longer planning to upgrade Falcon 9 second stage
-            for reusability. Accelerating BFR instead. New design is very
-            exciting! Delightfully counter-intuitive.
-          </p>
+          <p>{user.bio}</p>
         </main>
         <footer>
           <ul>
