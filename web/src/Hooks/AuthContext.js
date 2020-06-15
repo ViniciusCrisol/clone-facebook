@@ -1,4 +1,5 @@
 import React, { createContext, useCallback, useState, useContext } from 'react';
+import api from '../services/api';
 
 const AuthContext = createContext({});
 
@@ -8,7 +9,7 @@ function AuthProvider({ children }) {
     const user = localStorage.getItem('@Facecook:user');
 
     if (token && user) {
-      //  api.defaults.headers.authorization = `Bearer ${token}`;
+      api.defaults.headers.authorization = `Bearer ${token}`;
 
       return { token, user: JSON.parse(user) };
     }
@@ -17,19 +18,20 @@ function AuthProvider({ children }) {
   });
 
   const signIn = useCallback(async ({ email, password }) => {
-    // const response = await api.post('sessions', {
-    //   email,
-    //   password,
-    // });
-    //  const { token, user } = response.data;
-    const token = 123;
-    const user = 'Elon Musk';
+    const response = await api.post('create-session', {
+      email,
+      password,
+    });
+
+    const { token, user } = response.data;
 
     console.log(user);
 
     localStorage.setItem('@Facecook:token', token);
     localStorage.setItem('@Facecook:user', JSON.stringify(user));
-    // api.defaults.headers.authorization = `Bearer ${token}`;
+
+    api.defaults.headers.authorization = `Bearer ${token}`;
+
     setData({ token, user });
   }, []);
 

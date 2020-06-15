@@ -36,7 +36,7 @@ function Menu() {
           <li>
             <NavLink exact to='/profile'>
               <FiPaperclip size={15} /> Profile
-              <span>{user && <>({user.split(' ')[0]})</>}</span>
+              <span>{user && <>({user.name.split(' ')[0]})</>}</span>
             </NavLink>
           </li>
           <li>

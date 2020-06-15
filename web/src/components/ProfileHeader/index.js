@@ -1,18 +1,18 @@
 import React from 'react';
+import { useAuth } from '../../Hooks/AuthContext';
 
 import { Container } from './styles';
 
 function ProfileHeader() {
+  const { user } = useAuth();
+
   return (
     <Container>
-      <img
-        src='https://api.adorable.io/avatars/285/abotadorable'
-        alt='Profile'
-      />
+      <img src={user.avatar_url} alt={user.name} />
 
       <div>
         <main>
-          <h1>Elon Musk</h1>
+          <h1>{user.name}</h1>
           <p>
             Btw, SpaceX is no longer planning to upgrade Falcon 9 second stage
             for reusability. Accelerating BFR instead. New design is very
