@@ -21,15 +21,17 @@ export const Content = styled.div`
 
   position: relative;
 
-  > svg {
-    position: absolute;
-    top: 0;
-    left: 0;
+  section {
+    width: 60px;
+    height: 60px;
 
-    width: 50px;
-    height: 50px;
+    background: #5085e8;
+    box-shadow: 0px 13px 30px #0341b164;
+    border-radius: 50%;
 
-    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   ul {

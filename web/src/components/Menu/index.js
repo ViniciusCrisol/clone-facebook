@@ -1,5 +1,5 @@
 import React from 'react';
-import { GrFacebook } from 'react-icons/gr';
+import { GrFacebookOption } from 'react-icons/gr';
 import {
   FiBookOpen,
   FiMessageSquare,
@@ -18,7 +18,9 @@ function Menu() {
   return (
     <Container>
       <Content>
-        <GrFacebook color='#3C5A99' size={50} />
+        <section>
+          <GrFacebookOption color='white' size={35} />
+        </section>
 
         <ul>
           <h4>Menu</h4>
