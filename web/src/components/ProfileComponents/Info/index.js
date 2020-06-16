@@ -1,7 +1,9 @@
 import React from 'react';
-import { useAuth } from '../../Hooks/AuthContext';
+import { MdCake } from 'react-icons/md';
 
-import { Container, Wrapper } from './styles';
+import { useAuth } from '../../../Hooks/AuthContext';
+
+import { Container, CreateContainer, Wrapper } from './styles';
 
 function InfoContainer() {
   const { user } = useAuth();
@@ -9,7 +11,9 @@ function InfoContainer() {
   return (
     <Wrapper>
       {!user.birthday ? (
-        <Container>Add your birthday</Container>
+        <CreateContainer>
+          <MdCake size={30} /> Add your birthday
+        </CreateContainer>
       ) : (
         <Container>
           <h5>Birthday</h5>
@@ -17,7 +21,7 @@ function InfoContainer() {
         </Container>
       )}
       {!user.location ? (
-        <Container>Add your location</Container>
+        <CreateContainer>Add your location</CreateContainer>
       ) : (
         <Container>
           <h5>Location</h5>
@@ -25,7 +29,7 @@ function InfoContainer() {
         </Container>
       )}
       {!user.location ? (
-        <Container>Add your work place</Container>
+        <CreateContainer>Add your work place</CreateContainer>
       ) : (
         <Container>
           <h5>Work place</h5>

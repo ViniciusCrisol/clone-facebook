@@ -1,8 +1,6 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
 
-import ProfileContent from '../components/ProfileContent';
-
 import Route from './Route';
 
 import Feed from '../pages/Feed';

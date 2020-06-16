@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container } from './styles';
 
-function HeaderFeed() {
+function Header() {
   return (
     <Container>
       <li className='active'>
@@ -18,4 +18,4 @@ function HeaderFeed() {
   );
 }
 
-export default HeaderFeed;
+export default Header;

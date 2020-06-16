@@ -1,8 +1,8 @@
 import React from 'react';
 
-import ProfileHeader from '../ProfileHeader';
+import ProfileHeader from '../Header';
 
-function ProfileContent({ children }) {
+function Wrapper({ children }) {
   return (
     <div style={{ flex: 1 }}>
       <ProfileHeader />
@@ -11,4 +11,4 @@ function ProfileContent({ children }) {
   );
 }
 
-export default ProfileContent;
+export default Wrapper;

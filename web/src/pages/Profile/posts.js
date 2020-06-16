@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Container } from './styles';
-import ProfileContainer from '../../components/ProfileContent';
+
+import ProfileWrapper from '../../components/ProfileComponents/Wrapper';
+import CreatePost from '../../components/FeedComponents/CreatePost';
 
 function Profile() {
+  const [post, setPost] = useState(null);
+
   return (
-    <ProfileContainer>
-      <Container>amor</Container>;
-    </ProfileContainer>
+    <ProfileWrapper>
+      <Container>
+        {post ? (
+          <div>post</div>
+        ) : (
+          <div>
+            <CreatePost />
+          </div>
+        )}
+      </Container>
+    </ProfileWrapper>
   );
 }
 

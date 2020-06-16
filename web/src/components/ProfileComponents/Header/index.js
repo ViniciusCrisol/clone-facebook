@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { useAuth } from '../../Hooks/AuthContext';
+import { useAuth } from '../../../Hooks/AuthContext';
 
 import { Container } from './styles';
 
-function ProfileHeader() {
+function Header() {
   const { user } = useAuth();
 
   return (
@@ -40,4 +40,4 @@ function ProfileHeader() {
   );
 }
 
-export default ProfileHeader;
+export default Header;

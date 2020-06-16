@@ -31,3 +31,29 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+
+export const CreateContainer = styled.div`
+  height: 100px;
+  width: 270px;
+
+  color: #d3d8e0;
+
+  background-color: white;
+  box-shadow: 0px 3px 0px #d3d8e066;
+  border: 2px dashed #d3d8e066;
+  border-radius: 10px;
+  padding: 15px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  & + div {
+    margin-left: 15px;
+  }
+
+  h5 {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+`;
