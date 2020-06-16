@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdCake } from 'react-icons/md';
+import { MdCake, MdLocationOn, MdCardTravel } from 'react-icons/md';
 
 import { useAuth } from '../../../Hooks/AuthContext';
 
@@ -12,7 +12,9 @@ function InfoContainer() {
     <Wrapper>
       {!user.birthday ? (
         <CreateContainer>
-          <MdCake size={30} /> Add your birthday
+          <div>
+            <MdCake size={30} /> Add your birthday !
+          </div>
         </CreateContainer>
       ) : (
         <Container>
@@ -21,7 +23,11 @@ function InfoContainer() {
         </Container>
       )}
       {!user.location ? (
-        <CreateContainer>Add your location</CreateContainer>
+        <CreateContainer>
+          <div>
+            <MdLocationOn size={30} /> Add your location !
+          </div>
+        </CreateContainer>
       ) : (
         <Container>
           <h5>Location</h5>
@@ -29,7 +35,11 @@ function InfoContainer() {
         </Container>
       )}
       {!user.location ? (
-        <CreateContainer>Add your work place</CreateContainer>
+        <CreateContainer>
+          <div>
+            <MdCardTravel size={30} /> Add your work place !
+          </div>
+        </CreateContainer>
       ) : (
         <Container>
           <h5>Work place</h5>

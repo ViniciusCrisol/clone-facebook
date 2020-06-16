@@ -36,9 +36,8 @@ function SignUp() {
 
       history.push('/');
     } catch (error) {
-      error.errors.map((err) => {
-        toast(err);
-      });
+      if (error.errors) error.errors.map((err) => toast(err));
+      if (error.response) toast(error.response.data.error);
     }
   }
 

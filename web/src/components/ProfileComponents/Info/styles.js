@@ -45,15 +45,20 @@ export const CreateContainer = styled.div`
   padding: 15px;
 
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  align-items: center;
 
   & + div {
     margin-left: 15px;
   }
 
-  h5 {
-    text-transform: uppercase;
-    margin-bottom: 5px;
+  div {
+    display: flex;
+    align-items: flex-end;
+
+    font-size: 16px;
+
+    svg {
+      margin-right: 15px;
+    }
   }
 `;
