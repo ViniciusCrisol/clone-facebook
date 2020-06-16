@@ -40,6 +40,35 @@ class ItemsController {
 
     return res.json({ ok: true });
   }
+
+  async update(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+
+      const updatedUser = req.body;
+
+      await knex('users').where('id', id).update(updatedUser);
+
+      const user = await knex('users').where('id', id).first();
+
+      const { name, avatar, bio, bithday, location, work_place } = user;
+
+      const serializedUser = {
+        id,
+        bithday,
+        location,
+        work_place,
+        name,
+        avatar,
+        bio,
+        avatar_url: `http://192.168.100.6:3333/uploads/${user.avatar}`,
+      };
+
+      return res.json(serializedUser);
+    } catch {
+      return res.json({ error: 'Error. Try again' });
+    }
+  }
 }
 
 export default ItemsController;

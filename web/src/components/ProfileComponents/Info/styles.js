@@ -36,13 +36,10 @@ export const CreateContainer = styled.div`
   height: 100px;
   width: 270px;
 
-  color: #d3d8e0;
-
   background-color: white;
   box-shadow: 0px 3px 0px #d3d8e066;
   border: 2px dashed #d3d8e066;
   border-radius: 10px;
-  padding: 15px;
 
   display: flex;
   align-items: center;
@@ -51,10 +48,18 @@ export const CreateContainer = styled.div`
     margin-left: 15px;
   }
 
-  div {
+  > button {
+    height: 100%;
+
+    padding: 34px 15px;
+    background: none;
+    border: 0;
+
+    flex: 1;
     display: flex;
     align-items: flex-end;
 
+    color: #d3d8e0;
     font-size: 16px;
 
     svg {

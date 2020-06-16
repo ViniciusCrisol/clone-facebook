@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Form } from '@rocketseat/unform';
+import InputMask from 'react-input-mask';
 import { MdCake, MdLocationOn, MdCardTravel } from 'react-icons/md';
 
 import { useAuth } from '../../../Hooks/AuthContext';
@@ -8,13 +10,30 @@ import { Container, CreateContainer, Wrapper } from './styles';
 function InfoContainer() {
   const { user } = useAuth();
 
+  const [openBirthday, setOpenBirthday] = useState(true);
+  const [birthdayValue, setBirthdayValue] = useState('');
+
+  async function handleSubmitBirthday() {
+    console.log(birthdayValue);
+  }
+
   return (
     <Wrapper>
       {!user.birthday ? (
         <CreateContainer>
-          <div>
-            <MdCake size={30} /> Add your birthday !
-          </div>
+          {!openBirthday ? (
+            <button onClick={() => setOpenBirthday(!openBirthday)}>
+              <MdCake size={30} /> Add your birthday !
+            </button>
+          ) : (
+            <Form onSubmit={handleSubmitBirthday}>
+              <InputMask
+                mask='99/99/9999'
+                onChange={(event) => setBirthdayValue(event.target.value)}
+              />
+              <button type='submit'>ok</button>
+            </Form>
+          )}
         </CreateContainer>
       ) : (
         <Container>
@@ -24,9 +43,9 @@ function InfoContainer() {
       )}
       {!user.location ? (
         <CreateContainer>
-          <div>
+          <button>
             <MdLocationOn size={30} /> Add your location !
-          </div>
+          </button>
         </CreateContainer>
       ) : (
         <Container>
@@ -36,9 +55,9 @@ function InfoContainer() {
       )}
       {!user.location ? (
         <CreateContainer>
-          <div>
+          <button>
             <MdCardTravel size={30} /> Add your work place !
-          </div>
+          </button>
         </CreateContainer>
       ) : (
         <Container>

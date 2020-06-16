@@ -13,6 +13,7 @@ const sessionController = new SessionController();
 
 // User
 routes.post('/create-user', upload.single('image'), userController.store);
+routes.put('/update-user-data/:id', userController.update);
 
 // Session
 routes.post('/create-session', sessionController.store);
