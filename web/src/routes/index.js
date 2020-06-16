@@ -1,10 +1,14 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
 
+import ProfileContent from '../components/ProfileContent';
+
 import Route from './Route';
 
 import Feed from '../pages/Feed';
-import Profile from '../pages/Profile';
+
+import ProfilePosts from '../pages/Profile/posts';
+import ProfileInfo from '../pages/Profile/info';
 
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
@@ -16,7 +20,13 @@ export default function Routes() {
       <Route path='/register' exact component={SignUp} />
 
       <Route path='/feed' component={Feed} isPrivate />
-      <Route path='/profile' component={Profile} isPrivate />
+
+      <ProfileContent>
+        <Route path='/profile' exact component={ProfilePosts} isPrivate />
+        <Route path='/profile/information' component={ProfileInfo} isPrivate />
+        <Route path='/profile/photos' component={ProfilePosts} isPrivate />
+        <Route path='/profile/communities' component={ProfilePosts} isPrivate />
+      </ProfileContent>
     </Switch>
   );
 }

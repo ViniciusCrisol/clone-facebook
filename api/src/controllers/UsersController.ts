@@ -26,7 +26,6 @@ class ItemsController {
     const password_hash = await bcrypt.hash(password, 8);
 
     const avatar = '_default.png';
-
     const bio = 'Hey there! I am using Facebeook';
 
     const user = {

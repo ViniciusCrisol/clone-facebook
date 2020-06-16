@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import { useAuth } from '../../Hooks/AuthContext';
 
 import { Container } from './styles';
@@ -17,14 +19,19 @@ function ProfileHeader() {
         </main>
         <footer>
           <ul>
-            <li className='active'>
-              <button>Posts</button>
+            <li>
+              <NavLink exact to='/profile'>
+                Posts
+              </NavLink>
             </li>
             <li>
-              <button>Photos</button>
+              <NavLink to='/profile/information'>Information</NavLink>
             </li>
             <li>
-              <button>Communities</button>
+              <NavLink to='/profile/photos'>Photos</NavLink>
+            </li>
+            <li>
+              <NavLink to='/profile/communities'>Communities</NavLink>
             </li>
           </ul>
         </footer>

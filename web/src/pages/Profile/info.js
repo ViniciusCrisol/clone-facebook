@@ -2,12 +2,12 @@ import React from 'react';
 
 import { Container } from './styles';
 
-import Header from '../../components/ProfileHeader';
+import InfoContainer from '../../components/InfoContainer';
 
 function Profile() {
   return (
     <Container>
-      <Header />
+      <InfoContainer />
     </Container>
   );
 }

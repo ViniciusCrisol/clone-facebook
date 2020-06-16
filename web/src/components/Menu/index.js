@@ -34,14 +34,14 @@ function Menu() {
             )}
           </div>
           <li>
-            <NavLink exact to='/profile'>
+            <NavLink to='/profile'>
               <FiPaperclip size={15} /> Profile
               <span>{user && <>({user.name.split(' ')[0]})</>}</span>
             </NavLink>
           </li>
           <li>
             <NavLink exact to='/feed'>
-              <FiBookOpen size={15} /> News
+              <FiBookOpen size={15} /> Feed
             </NavLink>
           </li>
           <li>

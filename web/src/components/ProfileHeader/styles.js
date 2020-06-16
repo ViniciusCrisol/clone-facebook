@@ -50,19 +50,14 @@ export const Container = styled.div`
         align-items: flex-start;
 
         li {
-          button {
-            background: none;
-            border: 0;
-
+          a {
             font-size: 18px;
 
             line-height: 25px;
             font-weight: Regular;
             color: #45454580;
-          }
 
-          &.active {
-            button {
+            &.active {
               color: #454545;
             }
           }

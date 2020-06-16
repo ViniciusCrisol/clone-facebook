@@ -28,8 +28,6 @@ function AuthProvider({ children }) {
 
       const { token, user } = response.data;
 
-      console.log(user);
-
       localStorage.setItem('@Facecook:token', token);
       localStorage.setItem('@Facecook:user', JSON.stringify(user));
 
