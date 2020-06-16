@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { fadeIn } from '../../styles/animations';
+import { opacity } from '../../styles/animations';
 
 export const Container = styled.div`
   flex: 1;
-  animation: 400ms ${fadeIn} ease-out;
+  animation: 700ms ${opacity} ease-out;
 `;
