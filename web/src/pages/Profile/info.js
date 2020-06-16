@@ -3,12 +3,15 @@ import React from 'react';
 import { Container } from './styles';
 
 import InfoContainer from '../../components/InfoContainer';
+import ProfileContainer from '../../components/ProfileContent';
 
 function Profile() {
   return (
-    <Container>
-      <InfoContainer />
-    </Container>
+    <ProfileContainer>
+      <Container>
+        <InfoContainer />
+      </Container>
+    </ProfileContainer>
   );
 }
 

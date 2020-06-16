@@ -21,12 +21,10 @@ export default function Routes() {
 
       <Route path='/feed' component={Feed} isPrivate />
 
-      <ProfileContent>
-        <Route path='/profile' exact component={ProfilePosts} isPrivate />
-        <Route path='/profile/information' component={ProfileInfo} isPrivate />
-        <Route path='/profile/photos' component={ProfilePosts} isPrivate />
-        <Route path='/profile/communities' component={ProfilePosts} isPrivate />
-      </ProfileContent>
+      <Route path='/profile' exact component={ProfilePosts} isPrivate />
+      <Route path='/profile/information' component={ProfileInfo} isPrivate />
+      <Route path='/profile/photos' component={ProfilePosts} isPrivate />
+      <Route path='/profile/communities' component={ProfilePosts} isPrivate />
     </Switch>
   );
 }
