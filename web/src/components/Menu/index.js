@@ -1,6 +1,7 @@
 import React from 'react';
 import { GrFacebookOption } from 'react-icons/gr';
 import { BsBoxArrowLeft } from 'react-icons/bs';
+import { NavLink } from 'react-router-dom';
 import {
   FiBookOpen,
   FiMessageSquare,
@@ -8,7 +9,7 @@ import {
   FiUsers,
   FiPaperclip,
 } from 'react-icons/fi';
-import { NavLink } from 'react-router-dom';
+
 import { useAuth } from '../../Hooks/AuthContext';
 
 import { Container, Content } from './styles';
