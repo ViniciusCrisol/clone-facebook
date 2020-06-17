@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   position: fixed;
 
-  background-color: #f2f2f5;
+  background-color: var(--menu-background);
 
   display: flex;
   flex-direction: column;
@@ -25,8 +25,8 @@ export const Content = styled.div`
     width: 60px;
     height: 60px;
 
-    background: #5085e8;
-    box-shadow: 0px 13px 30px #0341b164;
+    background: var(--light-blue);
+    box-shadow: 0px 13px 30px var(--dark-blue);
     border-radius: 50%;
 
     display: flex;
@@ -54,13 +54,12 @@ export const Content = styled.div`
 
         font-size: 18px;
         font-weight: Medium;
-        color: #454545;
 
         opacity: 0.7;
 
         svg {
           margin-right: 10px;
-          color: #5085e8;
+          color: var(--light-blue);
           transition: 200ms ease;
         }
 
@@ -79,7 +78,6 @@ export const Content = styled.div`
       margin-top: 30px;
 
       span {
-        color: #454545;
         font-size: 12px;
 
         margin-left: 10px;
@@ -89,7 +87,7 @@ export const Content = styled.div`
       a {
         font-size: 18px;
         font-weight: Medium;
-        color: #454545;
+        color: var(--text);
 
         opacity: 0.7;
 

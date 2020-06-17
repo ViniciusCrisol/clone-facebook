@@ -13,7 +13,7 @@ export const Container = styled.div`
 
   border-radius: 10px;
   background-color: white;
-  box-shadow: 0px 3px 1px #d3d8e067;
+  box-shadow: 0px 3px 1px var(--light-gray-opacity);
 
   img {
     width: 50px;
@@ -43,19 +43,19 @@ export const Container = styled.div`
       }
 
       &:last-child {
-        border-left: 2px solid #d3d8e067;
+        border-left: 2px solid var(--light-gray-opacity);
         padding-left: 15px;
         margin-left: 15px;
 
         svg {
-          color: #d3d8e0;
+          color: var(--light-text);
 
           transition: 200ms ease;
         }
 
         &:hover {
           svg {
-            color: #5085e8;
+            color: var(--light-blue);
             transform: scale(1.1);
           }
         }

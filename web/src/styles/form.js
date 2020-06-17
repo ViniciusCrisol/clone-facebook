@@ -26,14 +26,14 @@ const Container = styled.div`
 
       border-radius: 10px;
       background-color: white;
-      box-shadow: 0px 3px 1px #d3d8e067;
+      box-shadow: 0px 3px 1px var(--light-gray-opacity);
     }
 
     button {
       height: 50px;
 
       border: 0;
-      background-color: #5085e8;
+      background-color: var(--light-blue);
       border-radius: 10px;
       box-shadow: 0px 3px 1px #5085e8bb;
 
@@ -51,7 +51,6 @@ const Container = styled.div`
     }
 
     h1 {
-      color: #454545;
       text-transform: uppercase;
       font-size: 20px;
 
@@ -63,7 +62,7 @@ const Container = styled.div`
       width: fit-content;
 
       font-weight: Medium;
-      color: #454545;
+      color: var(--text);
 
       opacity: 0.7;
       margin-top: 8px;

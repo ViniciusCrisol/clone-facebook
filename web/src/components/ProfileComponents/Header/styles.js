@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   max-height: 220px;
 
-  border-bottom: 2px solid #ebebeb;
+  border-bottom: 2px solid var(--light-gray-opacity);
 
   img {
     height: 150px;
@@ -55,10 +55,10 @@ export const Container = styled.div`
 
             line-height: 25px;
             font-weight: Regular;
-            color: #45454580;
+            color: var(--text-opacity);
 
             &.active {
-              color: #454545;
+              color: var(--text);
             }
           }
 

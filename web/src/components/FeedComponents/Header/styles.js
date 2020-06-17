@@ -4,7 +4,7 @@ export const Container = styled.ul`
   height: 50px;
   width: 100%;
 
-  border-bottom: 2px solid #ebebeb;
+  border-bottom: 2px solid var(--light-gray-opacity);
 
   display: flex;
   align-items: flex-start;
@@ -18,15 +18,13 @@ export const Container = styled.ul`
 
       line-height: 25px;
       font-weight: Regular;
-      color: #45454580;
+      color: var(--text-opacity);
     }
 
     &.active {
       button {
-        color: #454545;
-
         padding-bottom: 23px;
-        border-bottom: 2px solid #5085e8;
+        border-bottom: 2px solid var(--light-blue);
       }
     }
 

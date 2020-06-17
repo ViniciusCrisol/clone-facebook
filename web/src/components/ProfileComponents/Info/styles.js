@@ -13,8 +13,8 @@ export const Container = styled.div`
   width: 270px;
 
   background-color: white;
-  box-shadow: 0px 3px 0px #d3d8e066;
-  border: 1px solid #ebebeb;
+  box-shadow: 0px 3px 0px var(--light-gray-opacity);
+  border: 1px solid var(--light-gray-opacity);
   border-radius: 10px;
   padding: 15px;
 
@@ -22,7 +22,7 @@ export const Container = styled.div`
   align-items: center;
 
   font-size: 20px;
-  color: #d3d8e0;
+  color: var(--light-gray);
 
   & + div {
     margin-left: 15px;
@@ -43,8 +43,8 @@ export const CreateContainer = styled.div`
   width: 270px;
 
   background-color: white;
-  box-shadow: 0px 3px 0px #d3d8e066;
-  border: 2px dashed #d3d8e066;
+  box-shadow: 0px 3px 0px var(--light-gray);
+  border: 2px dashed var(--light-gray);
   border-radius: 10px;
 
   display: flex;
@@ -70,10 +70,10 @@ export const CreateContainer = styled.div`
       width: 170px;
 
       font-size: 20px;
-      color: #d3d8e0;
+      color: var(--light-gray);
 
       ::placeholder {
-        color: #d3d8e0 !important;
+        color: var(--light-gray) !important;
       }
     }
 
@@ -89,14 +89,14 @@ export const CreateContainer = styled.div`
       justify-content: center;
 
       svg {
-        color: #d3d8e0;
+        color: var(--light-gray);
 
         transition: 200ms ease;
       }
 
       &:hover {
         svg {
-          color: #5085e8;
+          color: var(--light-blue);
           transform: scale(1.1);
         }
       }
@@ -114,7 +114,7 @@ export const CreateContainer = styled.div`
     display: flex;
     align-items: flex-end;
 
-    color: #d3d8e0;
+    color: var(--light-gray);
     font-size: 16px;
 
     svg {

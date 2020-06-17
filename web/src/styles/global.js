@@ -30,7 +30,7 @@ body{
 }
 
 body, input , button {
-  color: #454545;
+  color: var(--text);
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
 }
@@ -45,5 +45,19 @@ button{
 
 li {
   list-style: none;
+}
+
+:root{
+
+--menu-background : #f2f2f5;
+--light-blue : #5085e8;
+--dark-blue:#0341b164;
+
+--text : #454545;
+--text-opacity : #45454580;
+--light-text : #d3d3d3;
+
+--light-gray : #d3d8e0;
+--light-gray-opacity : #d3d8e067;
 }
 `;

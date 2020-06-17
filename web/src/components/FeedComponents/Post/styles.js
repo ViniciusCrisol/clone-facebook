@@ -8,7 +8,7 @@ export const Container = styled.div`
 
   border-radius: 10px;
   background-color: white;
-  box-shadow: 0px 3px 1px #d3d8e067;
+  box-shadow: 0px 3px 1px var(--light-gray-opacity);
 
   padding: 25px;
 
@@ -31,7 +31,7 @@ export const Container = styled.div`
     div {
       margin-left: 15px;
       span {
-        color: #d3d8e0;
+        color: var(--light-text);
       }
     }
   }
@@ -66,7 +66,7 @@ export const Container = styled.div`
     align-items: center;
 
     button {
-      color: #d3d8e0;
+      color: var(--light-text);
       font-weight: bold;
 
       background: none;
@@ -83,7 +83,7 @@ export const Container = styled.div`
 
       &:hover {
         svg {
-          color: #5085e8;
+          color: var(--light-blue);
           transform: scale(1.1);
         }
       }
