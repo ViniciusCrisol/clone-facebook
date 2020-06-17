@@ -51,11 +51,11 @@ class ItemsController {
 
       const user = await knex('users').where('id', id).first();
 
-      const { name, avatar, bio, bithday, location, work_place } = user;
+      const { name, avatar, bio, birthday, location, work_place } = user;
 
       const serializedUser = {
         id,
-        bithday,
+        birthday,
         location,
         work_place,
         name,

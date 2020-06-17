@@ -31,11 +31,11 @@ class SessionController {
       return res.status(401).json({ error: 'Password does not match' });
     }
 
-    const { id, name, avatar, bio, bithday, location, work_place } = user;
+    const { id, name, avatar, bio, birthday, location, work_place } = user;
 
     const serializedUser = {
       id,
-      bithday,
+      birthday,
       location,
       work_place,
       name,

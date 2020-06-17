@@ -1,24 +1,57 @@
 import React, { useState } from 'react';
-import { Form } from '@rocketseat/unform';
+import { Form, Input } from '@rocketseat/unform';
+import { toast } from 'react-toastify';
 import InputMask from 'react-input-mask';
 import { MdCake, MdLocationOn, MdCardTravel } from 'react-icons/md';
+import { FiCheckSquare } from 'react-icons/fi';
+
+import api from '../../../services/api';
 
 import { useAuth } from '../../../Hooks/AuthContext';
 
 import { Container, CreateContainer, Wrapper } from './styles';
 
 function InfoContainer() {
-  const { user } = useAuth();
+  const { user, updateUser } = useAuth();
 
-  const [openBirthday, setOpenBirthday] = useState(true);
+  const [openBirthday, setOpenBirthday] = useState(false);
+  const [openLocation, setOpenLocation] = useState(false);
+  const [openWorkPlace, setOpenWorkPlace] = useState(false);
+
   const [birthdayValue, setBirthdayValue] = useState('');
 
   async function handleSubmitBirthday() {
-    console.log(birthdayValue);
+    try {
+      const response = await api.put(`update-user-data/${user.id}`, {
+        birthday: birthdayValue,
+      });
+
+      updateUser(response.data);
+    } catch (error) {
+      toast(error.response.data.error);
+    }
+  }
+
+  async function handleSubmit(data) {
+    try {
+      const response = await api.put(`update-user-data/${user.id}`, data);
+
+      updateUser(response.data);
+    } catch (error) {
+      toast(error.response.data.error);
+    }
+  }
+
+  function handleBirthdayChange(event) {
+    const { value } = event.target;
+
+    setBirthdayValue(value);
   }
 
   return (
     <Wrapper>
+      {/* Birthday */}
+
       {!user.birthday ? (
         <CreateContainer>
           {!openBirthday ? (
@@ -29,40 +62,81 @@ function InfoContainer() {
             <Form onSubmit={handleSubmitBirthday}>
               <InputMask
                 mask='99/99/9999'
-                onChange={(event) => setBirthdayValue(event.target.value)}
+                placeholder='00/00/0000'
+                onChange={handleBirthdayChange}
               />
-              <button type='submit'>ok</button>
+              <button type='submit'>
+                <FiCheckSquare size={30} />
+              </button>
             </Form>
           )}
         </CreateContainer>
       ) : (
         <Container>
-          <h5>Birthday</h5>
-          <p>01/04/2002</p>
+          <div>
+            <MdCake size={30} />
+            {user.birthday}
+          </div>
         </Container>
       )}
+
+      {/* Location */}
+
       {!user.location ? (
         <CreateContainer>
-          <button>
-            <MdLocationOn size={30} /> Add your location !
-          </button>
+          {!openLocation ? (
+            <button onClick={() => setOpenLocation(true)}>
+              <MdLocationOn size={30} /> Add your location !
+            </button>
+          ) : (
+            <Form onSubmit={handleSubmit}>
+              <Input
+                name='location'
+                placeholder='Brooklyn,NY'
+                autoComplete='off'
+              />
+              <button type='submit'>
+                <FiCheckSquare size={30} />
+              </button>
+            </Form>
+          )}
         </CreateContainer>
       ) : (
         <Container>
-          <h5>Location</h5>
-          <p>Franca/SP</p>
+          <div>
+            <MdLocationOn size={30} />
+            {user.location}
+          </div>
         </Container>
       )}
-      {!user.location ? (
+
+      {/* Work Place */}
+
+      {!user.work_place ? (
         <CreateContainer>
-          <button>
-            <MdCardTravel size={30} /> Add your work place !
-          </button>
+          {!openWorkPlace ? (
+            <button onClick={() => setOpenWorkPlace(true)}>
+              <MdCardTravel size={30} /> Add your work place !
+            </button>
+          ) : (
+            <Form onSubmit={handleSubmit}>
+              <Input
+                name='work_place'
+                placeholder='Work Place'
+                autoComplete='off'
+              />
+              <button type='submit'>
+                <FiCheckSquare size={30} />
+              </button>
+            </Form>
+          )}
         </CreateContainer>
       ) : (
         <Container>
-          <h5>Work place</h5>
-          <p>Google</p>
+          <div>
+            <MdCardTravel size={30} />
+            {user.work_place}
+          </div>
         </Container>
       )}
     </Wrapper>
