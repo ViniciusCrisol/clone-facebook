@@ -5,11 +5,18 @@ import knex from '../database/connections';
 class SessionController {
   async store(req: Request, res: Response) {
     const { search } = req.params;
+    const { page } = req.headers;
+
+    const currentPage = page ? page : 1;
+
+    const offset = (<any>currentPage - 1) * 27;
 
     const users = await knex
       .select('*')
       .from('users')
-      .where('name', 'like', `%${search}%`);
+      .where('name', 'like', `%${search}%`)
+      .offset(offset)
+      .limit(27);
 
     const serializedUsers = users.map((user) => {
       const userData = {

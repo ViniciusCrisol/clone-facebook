@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-import { Container, Wrapper } from './styles';
+import { Container, Wrapper, LoadMoreButton } from './styles';
 
 import SearchBar from '../../components/FeedComponents/SearchBar';
 
@@ -17,12 +17,14 @@ function searchResults() {
 
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     async function search() {
       try {
-        const response = await api.get(`search/${location.search}`);
-        console.log(response);
+        const response = await api.get(`search/${location.search}`, {
+          headers: { page },
+        });
         setUsers(response.data);
         setLoading(false);
       } catch (error) {
@@ -31,7 +33,23 @@ function searchResults() {
       }
     }
     search();
-  }, [history, location.search]);
+  }, [history, location.search, page]);
+
+  async function loadMore() {
+    try {
+      setPage(page + 1);
+      const response = await api.get(`search/${location.search}`, {
+        headers: { page },
+      });
+
+      setUsers([...users, ...response.data]);
+
+      setLoading(false);
+    } catch (error) {
+      toast(error.response.data.error);
+      history.push('/');
+    }
+  }
 
   return (
     <Wrapper>

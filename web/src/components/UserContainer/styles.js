@@ -3,23 +3,19 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled(Link)`
   height: 100px;
-  width: 300px;
+  width: 270px;
 
   background-color: white;
   box-shadow: 0px 3px 0px var(--light-gray-opacity);
   border: 1px solid var(--light-gray-opacity);
   border-radius: 10px;
 
-  margin-top: 15px;
+  margin: 7.5px;
 
   overflow: hidden;
 
   display: flex;
   align-items: center;
-
-  & + div {
-    margin-left: 15px;
-  }
 
   img {
     height: 100%;

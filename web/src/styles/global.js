@@ -11,7 +11,7 @@ export default createGlobalStyle`
   box-sizing: border-box;
 }
 
-*:focus {
+*:focus{
   outline: 0;
 }
 
@@ -26,7 +26,6 @@ html, body , #root{
 body{
   -webkit-font-smoothing: antialiased !important;
   background-color: #F6F6F9;
-
 }
 
 body, input , button {

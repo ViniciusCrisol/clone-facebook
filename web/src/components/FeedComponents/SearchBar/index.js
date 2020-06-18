@@ -14,7 +14,12 @@ function SearchBar() {
 
   return (
     <Container onSubmit={handleSubmit}>
-      <Input type='text' name='search' placeholder='Searching for something?' />
+      <Input
+        type='text'
+        autoComplete='off'
+        name='search'
+        placeholder='Searching for something?'
+      />
 
       <button>
         <AiOutlineSearch size={30} />
