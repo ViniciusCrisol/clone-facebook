@@ -1,16 +1,20 @@
 import React from 'react';
+import { Input } from '@rocketseat/unform';
+import { useHistory } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
-
-import api from '../../../services/api';
 
 import { Container } from './styles';
 
 function SearchBar() {
-  async function handleSubmit() {}
+  const history = useHistory();
+
+  async function handleSubmit(data) {
+    history.push(`/search/${data.search}`);
+  }
 
   return (
-    <Container>
-      <input type='text' placeholder='Searching for something?' />
+    <Container onSubmit={handleSubmit}>
+      <Input type='text' name='search' placeholder='Searching for something?' />
 
       <button>
         <AiOutlineSearch size={30} />

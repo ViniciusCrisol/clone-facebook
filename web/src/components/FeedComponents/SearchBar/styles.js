@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Form } from '@rocketseat/unform';
 
-export const Container = styled.div`
+export const Container = styled(Form)`
   max-width: 1025px;
   height: 60px;
 

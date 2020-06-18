@@ -11,6 +11,8 @@ import ProfileInfo from '../pages/Profile/info';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 
+import Search from '../pages/SearchResults';
+
 export default function Routes() {
   return (
     <Switch>
@@ -23,6 +25,8 @@ export default function Routes() {
       <Route path='/profile/information' component={ProfileInfo} isPrivate />
       <Route path='/profile/photos' component={ProfilePosts} isPrivate />
       <Route path='/profile/communities' component={ProfilePosts} isPrivate />
+
+      <Route path='/search/:search' component={Search} isPrivate />
     </Switch>
   );
 }
