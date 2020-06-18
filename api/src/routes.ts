@@ -22,6 +22,6 @@ routes.use(authMiddleware);
 
 routes.put('/update-user-data/:id', userController.update);
 
-routes.post('/search', searchController.store);
+routes.get('/search/:search', searchController.store);
 
 export default routes;
