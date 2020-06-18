@@ -18,15 +18,15 @@ export default createGlobalStyle`
 html, body , #root{
   min-height: 100%;
   width: 100%;
-
+  
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
 }
+
 
 body{
   -webkit-font-smoothing: antialiased !important;
   background-color: #F6F6F9;
+
 }
 
 body, input , button {

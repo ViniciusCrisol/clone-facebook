@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  margin-top: 30px;
+  margin-top: 15px;
   max-width: 1025px;
 
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 `;
 
@@ -16,7 +18,9 @@ export const Container = styled.div`
   box-shadow: 0px 3px 0px var(--light-gray-opacity);
   border: 1px solid var(--light-gray-opacity);
   border-radius: 10px;
+
   padding: 15px;
+  margin-top: 15px;
 
   display: flex;
   align-items: center;
@@ -46,6 +50,8 @@ export const CreateContainer = styled.div`
   box-shadow: 0px 3px 0px var(--light-gray);
   border: 2px dashed var(--light-gray);
   border-radius: 10px;
+
+  margin-top: 15px;
 
   display: flex;
   align-items: center;

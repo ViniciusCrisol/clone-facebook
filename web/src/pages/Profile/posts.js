@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import { Container } from './styles';
-
 import ProfileWrapper from '../../components/ProfileComponents/Wrapper';
 import CreatePost from '../../components/FeedComponents/CreatePost';
 
@@ -10,7 +8,7 @@ function Profile() {
 
   return (
     <ProfileWrapper>
-      <Container>
+      <div>
         {post ? (
           <div>post</div>
         ) : (
@@ -18,7 +16,7 @@ function Profile() {
             <CreatePost />
           </div>
         )}
-      </Container>
+      </div>
     </ProfileWrapper>
   );
 }

@@ -1,13 +1,15 @@
 import React from 'react';
 
+import { Container, Content } from './styles';
+
 import ProfileHeader from '../Header';
 
 function Wrapper({ children }) {
   return (
-    <div style={{ flex: 1 }}>
+    <Container>
       <ProfileHeader />
-      {children}
-    </div>
+      <Content>{children}</Content>
+    </Container>
   );
 }
 

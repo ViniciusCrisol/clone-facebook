@@ -4,8 +4,6 @@ export const Container = styled.div`
   width: 340px;
   height: 100%;
 
-  position: fixed;
-
   background-color: var(--menu-background);
 
   display: flex;

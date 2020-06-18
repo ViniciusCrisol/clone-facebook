@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, ContentFeed } from './styles';
+import { Container } from './styles';
 
 import HeaderFeed from '../../components/FeedComponents/Header';
 import CreatePost from '../../components/FeedComponents/CreatePost';
@@ -12,11 +12,9 @@ function feed() {
     <Container>
       <SearchBar />
       <HeaderFeed />
-      <ContentFeed>
-        <CreatePost />
+      <CreatePost />
 
-        <Post />
-      </ContentFeed>
+      <Post />
     </Container>
   );
 }

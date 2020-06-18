@@ -6,7 +6,6 @@ import Routes from './routes';
 import GlobalStyles from './styles/global';
 
 import Content from './components/Content';
-import Menu from './components/Menu';
 
 import AppProvider from './Hooks';
 
@@ -14,8 +13,6 @@ function App() {
   return (
     <BrowserRouter>
       <AppProvider>
-        <Menu />
-
         <ToastContainer
           autoClose={3000}
           pauseOnFocusLoss={false}
