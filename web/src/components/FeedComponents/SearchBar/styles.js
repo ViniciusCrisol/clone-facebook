@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Form } from '@rocketseat/unform';
 
 export const Container = styled(Form)`
-  max-width: 1025px;
+  width: 100%;
   height: 60px;
 
   margin-top: 0px;
@@ -17,14 +17,11 @@ export const Container = styled(Form)`
   justify-content: space-between;
 
   input {
+    height: 100%;
     flex: 1;
-
-    padding: 20px 0;
-    border: 0;
   }
 
   button {
-    border: 0;
     background: none;
 
     svg {

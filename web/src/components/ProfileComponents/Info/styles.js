@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   margin-top: 15px;
-  max-width: 1025px;
 
   display: flex;
   align-items: center;
@@ -87,7 +86,6 @@ export const CreateContainer = styled.div`
       height: 100%;
       width: 40px;
 
-      border: 0;
       background: none;
 
       display: flex;
@@ -114,7 +112,6 @@ export const CreateContainer = styled.div`
 
     padding: 34px 15px;
     background: none;
-    border: 0;
 
     flex: 1;
     display: flex;

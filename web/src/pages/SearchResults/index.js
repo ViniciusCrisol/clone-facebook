@@ -1,49 +1,34 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-import { Container, Wrapper, LoadMoreButton } from './styles';
-
-import SearchBar from '../../components/FeedComponents/SearchBar';
+import { Container, Wrapper, LoadMoreButton, NothingFound } from './styles';
 
 import api from '../../services/api';
-
 import UserContainer from '../../components/UserContainer';
+
+import background from '../../assets/nothing_found.svg';
 
 function searchResults() {
   const location = useParams();
   const history = useHistory();
 
+  const currentPage = location.search;
+
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    async function search() {
-      try {
-        const response = await api.get(`search/${location.search}`, {
-          headers: { page },
-        });
-        setUsers(response.data);
-        setLoading(false);
-      } catch (error) {
-        toast(error.response.data.error);
-        history.push('/');
-      }
-    }
-    search();
-  }, [history, location.search, page]);
-
-  async function loadMore() {
+  async function search() {
     try {
-      setPage(page + 1);
-      const response = await api.get(`search/${location.search}`, {
+      const response = await api.get(`search/${currentPage}`, {
         headers: { page },
       });
+      setPage(page + 1);
 
       setUsers([...users, ...response.data]);
-
       setLoading(false);
     } catch (error) {
       toast(error.response.data.error);
@@ -51,9 +36,17 @@ function searchResults() {
     }
   }
 
+  useEffect(() => {
+    search();
+  }, [currentPage]);
+
   return (
     <Wrapper>
-      <SearchBar />
+      <div>
+        <span>
+          Results of : <strong>{currentPage}</strong>
+        </span>
+      </div>
       <Container>
         {!loading && (
           <>
@@ -69,11 +62,19 @@ function searchResults() {
                 ))}
               </>
             ) : (
-              <h1>Nothing found =(</h1>
+              <NothingFound>
+                <h1>Nothing Found...</h1>
+                <span>(Try another search!)</span>
+                <img src={background} alt='Nothing found' />
+              </NothingFound>
             )}
           </>
         )}
       </Container>
+
+      {users.length > 0 && (
+        <LoadMoreButton onClick={search}>Load More</LoadMoreButton>
+      )}
     </Wrapper>
   );
 }

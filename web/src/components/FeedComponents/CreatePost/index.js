@@ -16,13 +16,13 @@ function CreatePost() {
 
       <div>
         <button>
-          <BsImages color='#D3D8E0' size={22} />
+          <BsImages size={22} />
         </button>
         <button>
-          <FiUser color='#D3D8E0' size={22} />
+          <FiUser size={22} />
         </button>
         <button>
-          <FiSmile color='#D3D8E0' size={22} />
+          <FiSmile size={22} />
         </button>
         <button>
           <FiCheckSquare size={30} />

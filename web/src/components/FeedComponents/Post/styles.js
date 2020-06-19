@@ -70,7 +70,6 @@ export const Container = styled.div`
       font-weight: bold;
 
       background: none;
-      border: 0;
 
       display: flex;
       align-items: flex-end;

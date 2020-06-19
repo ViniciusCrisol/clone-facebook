@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  align-items: center;
-
   max-height: 220px;
+  max-width: 1025px;
 
   border-bottom: 2px solid var(--light-gray-opacity);
+
+  display: flex;
+  align-items: center;
 
   img {
     height: 150px;
@@ -14,11 +15,11 @@ export const Container = styled.div`
   }
 
   div {
+    margin-left: 30px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    margin-left: 30px;
 
     main {
       max-width: 970px;
@@ -37,11 +38,10 @@ export const Container = styled.div`
 
     footer {
       height: 50px;
+      margin-top: 50px;
 
       display: flex;
       align-items: center;
-
-      margin-top: 50px;
 
       ul {
         width: 100%;

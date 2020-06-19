@@ -17,14 +17,11 @@ export const Container = styled.div`
 
   img {
     width: 50px;
-
     border-radius: 50%;
   }
 
   input {
     flex: 1;
-
-    border: 0;
     padding: 25px;
   }
 
@@ -35,8 +32,8 @@ export const Container = styled.div`
     align-items: center;
 
     button {
-      border: 0;
       background: none;
+      color: var(--light-text);
 
       & + button {
         margin-left: 10px;
@@ -48,8 +45,6 @@ export const Container = styled.div`
         margin-left: 15px;
 
         svg {
-          color: var(--light-text);
-
           transition: 200ms ease;
         }
 

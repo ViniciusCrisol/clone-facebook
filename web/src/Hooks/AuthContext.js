@@ -24,15 +24,12 @@ function AuthProvider({ children }) {
 
     if (token) {
       try {
-        const response = await api.get('check-token', {
+        await api.get('check-token', {
           headers: {
             authorization: `Bearer ${token}`,
           },
         });
-        setData(data);
-        console.log(response);
       } catch (error) {
-        console.log(error);
         localStorage.removeItem('@Facecook:token');
         localStorage.removeItem('@Facecook:user');
         setData({});

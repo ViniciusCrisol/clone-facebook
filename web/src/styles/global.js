@@ -42,6 +42,10 @@ button{
   cursor: pointer;
 }
 
+button, input{
+  border: 0;
+}
+
 li {
   list-style: none;
 }

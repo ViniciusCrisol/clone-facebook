@@ -8,8 +8,8 @@ import { Container } from './styles';
 function SearchBar() {
   const history = useHistory();
 
-  async function handleSubmit(data) {
-    history.push(`/search/${data.search}`);
+  async function handleSubmit({ search }) {
+    history.push(`/search/${search}`);
   }
 
   return (
