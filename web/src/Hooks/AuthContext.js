@@ -6,19 +6,9 @@ import api from '../services/api';
 const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
-  const [data, setData] = useState(async () => {
+  const [data, setData] = useState(() => {
     const token = localStorage.getItem('@Facecook:token');
     const user = localStorage.getItem('@Facecook:user');
-
-    try {
-      await api.get('check-token', {
-        headers: {
-          authorization: `Bearer ${token}`,
-        },
-      });
-    } catch (error) {
-      return {};
-    }
 
     if (token && user) {
       api.defaults.headers.authorization = `Bearer ${token}`;
@@ -28,6 +18,27 @@ function AuthProvider({ children }) {
 
     return {};
   });
+
+  const checkToken = useCallback(async () => {
+    const token = data.token;
+
+    if (token) {
+      try {
+        const response = await api.get('check-token', {
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
+        });
+        setData(data);
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+        localStorage.removeItem('@Facecook:token');
+        localStorage.removeItem('@Facecook:user');
+        setData({});
+      }
+    }
+  }, [data]);
 
   const signIn = useCallback(async ({ email, password }) => {
     try {
@@ -70,7 +81,7 @@ function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ user: data.user, signIn, signOut, updateUser }}
+      value={{ user: data.user, signIn, signOut, updateUser, checkToken }}
     >
       {children}
     </AuthContext.Provider>
