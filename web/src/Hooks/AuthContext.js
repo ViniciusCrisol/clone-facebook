@@ -6,14 +6,14 @@ import api from '../services/api';
 const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
-  const [data, setData] = useState(() => {
+  const [data, setData] = useState(async () => {
     const token = localStorage.getItem('@Facecook:token');
     const user = localStorage.getItem('@Facecook:user');
 
     try {
-      api.get('check-token', {
+      await api.get('check-token', {
         headers: {
-          authorization: token,
+          authorization: `Bearer ${token}`,
         },
       });
     } catch (error) {
