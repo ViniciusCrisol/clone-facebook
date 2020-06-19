@@ -10,6 +10,16 @@ function AuthProvider({ children }) {
     const token = localStorage.getItem('@Facecook:token');
     const user = localStorage.getItem('@Facecook:user');
 
+    try {
+      api.get('check-token', {
+        headers: {
+          authorization: token,
+        },
+      });
+    } catch (error) {
+      return {};
+    }
+
     if (token && user) {
       api.defaults.headers.authorization = `Bearer ${token}`;
 
