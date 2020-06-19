@@ -7,6 +7,8 @@ import { toast } from 'react-toastify';
 import { Container, Wrapper, LoadMoreButton, NothingFound } from './styles';
 
 import api from '../../services/api';
+import { useAuth } from '../../Hooks/AuthContext';
+
 import UserContainer from '../../components/UserContainer';
 
 import background from '../../assets/nothing_found.svg';
@@ -14,6 +16,7 @@ import background from '../../assets/nothing_found.svg';
 function searchResults() {
   const location = useParams();
   const history = useHistory();
+  const { user } = useAuth();
 
   const currentPage = location.search;
 
@@ -24,7 +27,7 @@ function searchResults() {
   async function search() {
     try {
       const response = await api.get(`search/${currentPage}`, {
-        headers: { page },
+        headers: { page, id: user.id },
       });
       setPage(page + 1);
 

@@ -5,7 +5,7 @@ import knex from '../database/connections';
 class SessionController {
   async store(req: Request, res: Response) {
     const { search } = req.params;
-    const { page } = req.headers;
+    const { page, id } = req.headers;
 
     const currentPage = page ? page : 1;
 
@@ -15,6 +15,7 @@ class SessionController {
       .select('*')
       .from('users')
       .where('name', 'like', `%${search}%`)
+      .andWhere('id', '<>', `${id}`)
       .offset(offset)
       .limit(27);
 
