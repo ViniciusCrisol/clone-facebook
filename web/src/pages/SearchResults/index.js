@@ -75,7 +75,7 @@ function searchResults() {
         )}
       </Container>
 
-      {users.length > 0 && (
+      {users.length === 27 && (
         <LoadMoreButton onClick={search}>Load More</LoadMoreButton>
       )}
     </Wrapper>

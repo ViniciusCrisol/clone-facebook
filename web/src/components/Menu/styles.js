@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 340px;
+  width: 280px;
   height: 100%;
 
   background-color: var(--menu-background);
@@ -12,6 +12,8 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  position: fixed;
+
   width: 220px;
   height: 100%;
 

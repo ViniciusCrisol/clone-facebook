@@ -28,9 +28,16 @@ export const Container = styled.div`
         font-size: 30px;
       }
 
-      p {
+      textarea {
         margin-top: 15px;
         font-size: 17px;
+
+        width: 520px;
+        height: 60px;
+
+        background: none;
+        resize: none;
+        border: 0;
 
         opacity: 0.6;
       }
@@ -38,7 +45,7 @@ export const Container = styled.div`
 
     footer {
       height: 50px;
-      margin-top: 50px;
+      margin-top: 30px;
 
       display: flex;
       align-items: center;

@@ -28,7 +28,7 @@ body{
   background-color: #F6F6F9;
 }
 
-body, input , button {
+body, input , button, textarea {
   color: var(--text);
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;

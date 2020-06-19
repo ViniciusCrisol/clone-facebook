@@ -1,4 +1,5 @@
 import React from 'react';
+import { Form, Input } from '@rocketseat/unform';
 import { NavLink } from 'react-router-dom';
 
 import { useAuth } from '../../../Hooks/AuthContext';
@@ -8,6 +9,8 @@ import { Container } from './styles';
 function Header() {
   const { user } = useAuth();
 
+  async function handleSubmit() {}
+
   return (
     <Container>
       <img src={user.avatar_url} alt={user.name} />
@@ -15,7 +18,9 @@ function Header() {
       <div>
         <main>
           <h1>{user.name}</h1>
-          <p>{user.bio}</p>
+          <Form onSubmit={handleSubmit} initialData={{ bio: user.bio }}>
+            <Input name='bio' multiline />
+          </Form>
         </main>
         <footer>
           <ul>
