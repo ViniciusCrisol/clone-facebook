@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Form } from '@rocketseat/unform';
 
 export const Container = styled(Form)`
-  width: 100%;
   height: 60px;
 
   margin-top: 0px;

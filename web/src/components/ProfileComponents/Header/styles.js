@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   max-height: 220px;
-  max-width: 1025px;
-
   border-bottom: 2px solid var(--light-gray-opacity);
 
   display: flex;

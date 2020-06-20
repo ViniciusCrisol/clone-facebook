@@ -5,7 +5,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  max-width: 1025px;
   height: 80px;
 
   margin-top: 30px;

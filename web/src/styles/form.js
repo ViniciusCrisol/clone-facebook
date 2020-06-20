@@ -3,9 +3,9 @@ import { fadeIn } from './animations';
 
 const Container = styled.div`
   animation: 700ms ${fadeIn} ease-out;
+  height: 80%;
 
   flex: 1;
-
   display: flex;
   align-items: center;
   justify-content: center;

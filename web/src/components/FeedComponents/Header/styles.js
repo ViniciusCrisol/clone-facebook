@@ -2,10 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.ul`
   height: 50px;
-  width: 100%;
-
   margin-top: 30px;
-
   border-bottom: 2px solid var(--light-gray-opacity);
 
   display: flex;

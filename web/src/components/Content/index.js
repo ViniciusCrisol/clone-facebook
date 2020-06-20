@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import Menu from '../Menu';
 
-import { Container } from './styles';
+import { Container, Layout } from './styles';
 
 import { useAuth } from '../../Hooks/AuthContext';
 
@@ -16,7 +16,9 @@ function Content({ children }) {
   return (
     <>
       <Menu />
-      <Container>{children}</Container>
+      <Container>
+        <Layout>{children}</Layout>
+      </Container>
     </>
   );
 }

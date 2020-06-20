@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 280px;
+  width: 340px;
   height: 100%;
 
   background-color: var(--menu-background);

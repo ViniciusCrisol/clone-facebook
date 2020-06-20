@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  margin-top: 30px;
+  margin-top: 60px;
 
   display: flex;
 
