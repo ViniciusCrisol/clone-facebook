@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { NavLink } from 'react-router-dom';
+import { FiEdit } from 'react-icons/fi';
 
 import { useAuth } from '../../../Hooks/AuthContext';
 
@@ -8,6 +9,8 @@ import { Container } from './styles';
 
 function Header() {
   const { user } = useAuth();
+
+  const [editInput, setEditInput] = useState(true);
 
   async function handleSubmit() {}
 
@@ -19,7 +22,16 @@ function Header() {
         <main>
           <h1>{user.name}</h1>
           <Form onSubmit={handleSubmit} initialData={{ bio: user.bio }}>
-            <Input name='bio' multiline />
+            <Input
+              className={editInput ? 'active' : ''}
+              name='bio'
+              multiline
+              maxLength={255}
+              disabled={editInput ? false : true}
+            />
+            <button onClick={() => setEditInput(!editInput)}>
+              <FiEdit size={30} color={editInput ? '#5085e8' : ''} />
+            </button>
           </Form>
         </main>
         <footer>

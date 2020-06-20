@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { fadeIn } from '../../../styles/animations';
 
 export const Container = styled.div`
-  max-height: 220px;
+  max-height: 240px;
   border-bottom: 2px solid var(--light-gray-opacity);
 
   display: flex;
@@ -25,19 +26,53 @@ export const Container = styled.div`
       h1 {
         font-size: 30px;
       }
+      form {
+        position: relative;
 
-      textarea {
-        margin-top: 15px;
-        font-size: 17px;
+        > button {
+          background: none;
 
-        width: 520px;
-        height: 60px;
+          position: absolute;
+          top: -15px;
 
-        background: none;
-        resize: none;
-        border: 0;
+          svg {
+            margin-right: 10px;
+            color: var(--light-text);
 
-        opacity: 0.6;
+            transition: 200ms ease;
+          }
+
+          &:hover {
+            svg {
+              color: var(--light-blue);
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        .active {
+          background-color: white;
+          box-shadow: 0px 3px 1px var(--light-gray-opacity);
+          animation: 700ms ${fadeIn} ease-out;
+          color: var(--text-opacity);
+        }
+
+        textarea {
+          margin-top: 15px;
+          font-size: 17px;
+
+          padding: 5px;
+          border-radius: 10px;
+
+          width: 520px;
+          height: 100px;
+
+          background: none;
+          resize: none;
+          border: 0;
+
+          opacity: 1;
+        }
       }
     }
 
