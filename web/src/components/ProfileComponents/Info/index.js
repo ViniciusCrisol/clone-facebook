@@ -22,7 +22,7 @@ function InfoContainer() {
 
   async function handleSubmitBirthday() {
     try {
-      const response = await api.put(`update-user-data/${user.id}`, {
+      const response = await api.put('update-user-data', {
         birthday: birthdayValue,
       });
 
@@ -34,7 +34,7 @@ function InfoContainer() {
 
   async function handleSubmit(data) {
     try {
-      const response = await api.put(`update-user-data/${user.id}`, data);
+      const response = await api.put('update-user-data', data);
 
       updateUser(response.data);
     } catch (error) {

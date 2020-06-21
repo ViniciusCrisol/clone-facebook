@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import knex from '../database/connections';
 import bcrypt from 'bcryptjs';
 
-class ItemsController {
+class UserController {
   async store(req: Request, res: Response) {
     const schema = Yup.object().shape({
       name: Yup.string().required(),
@@ -43,7 +43,7 @@ class ItemsController {
 
   async update(req: Request, res: Response) {
     try {
-      const { id } = req.params;
+      const { userId: id } = req;
 
       const updatedUser = req.body;
 
@@ -96,4 +96,4 @@ class ItemsController {
   }
 }
 
-export default ItemsController;
+export default UserController;
