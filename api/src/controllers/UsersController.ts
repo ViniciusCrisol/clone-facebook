@@ -66,7 +66,7 @@ class ItemsController {
 
       return res.json(serializedUser);
     } catch {
-      return res.json({ error: 'Error. Try again' });
+      return res.status(400).json({ error: 'Error. Try again' });
     }
   }
 }

@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { NavLink } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { FiEdit } from 'react-icons/fi';
 
 import { useAuth } from '../../../Hooks/AuthContext';
+import api from '../../../services/api';
 
 import { Container } from './styles';
 
 function Header() {
-  const { user } = useAuth();
+  const { user, updateUser } = useAuth();
 
-  const [editInput, setEditInput] = useState(true);
+  const [editInput, setEditInput] = useState(false);
 
-  async function handleSubmit() {}
+  async function handleSubmit(data) {
+    try {
+      const response = await api.put(`update-user-data/${user.id}`, data);
+      console.log(response);
+      updateUser(response.data);
+    } catch (error) {
+      toast(error.response.data.error);
+    }
+  }
 
   return (
     <Container>
@@ -29,7 +39,10 @@ function Header() {
               maxLength={255}
               disabled={editInput ? false : true}
             />
-            <button onClick={() => setEditInput(!editInput)}>
+            <button
+              onClick={() => setEditInput(!editInput)}
+              type={!editInput ? 'submit' : 'button'}
+            >
               <FiEdit size={30} color={editInput ? '#5085e8' : ''} />
             </button>
           </Form>
