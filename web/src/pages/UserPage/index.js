@@ -17,6 +17,8 @@ function UserPage() {
     async function loadUser() {
       const response = await api.get(`/show-user/${currentPage}`);
 
+      console.log(response.data);
+
       setUser(response.data);
     }
     loadUser();
@@ -26,9 +28,12 @@ function UserPage() {
     <Container>
       <Header
         id={currentPage}
-        name={user.name}
         avatar_url={user.avatar_url}
+        name={user.name}
         bio={user.bio}
+        birthday={user.birthday}
+        location={user.location}
+        work_place={user.work_place}
       />
     </Container>
   );

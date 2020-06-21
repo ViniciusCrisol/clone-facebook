@@ -1,6 +1,13 @@
 import styled from 'styled-components';
+import { fadeIn } from '../../../styles/animations';
 
 export const Container = styled.div`
+  flex: 1;
+  position: relative;
+  animation: 700ms ${fadeIn} ease-out;
+`;
+
+export const MainContainer = styled.div`
   padding-bottom: 15px;
   border-bottom: 2px solid var(--light-gray-opacity);
 
@@ -9,6 +16,35 @@ export const Container = styled.div`
   img {
     height: 150px;
     border-radius: 50%;
+  }
+
+  button {
+    position: absolute;
+    right: 60px;
+    top: 30px;
+
+    width: 60px;
+    height: 60px;
+
+    background: var(--light-blue);
+    box-shadow: 0px 13px 30px var(--dark-blue);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 10px;
+
+    transition: filter 200ms ease;
+
+    svg {
+      color: white;
+    }
+
+    &:hover {
+      filter: brightness(1.1);
+    }
   }
 
   main {
