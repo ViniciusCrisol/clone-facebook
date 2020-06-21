@@ -6,9 +6,7 @@ import ProfileWrapper from '../../components/ProfileComponents/Wrapper';
 function Profile() {
   return (
     <ProfileWrapper>
-      <div>
-        <InfoContainer />
-      </div>
+      <InfoContainer />
     </ProfileWrapper>
   );
 }

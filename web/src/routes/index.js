@@ -12,6 +12,7 @@ import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 
 import Search from '../pages/SearchResults';
+import User from '../pages/UserPage';
 
 export default function Routes() {
   return (
@@ -27,6 +28,7 @@ export default function Routes() {
       <Route path='/profile/communities' component={ProfilePosts} isPrivate />
 
       <Route path='/search/:search' component={Search} isPrivate />
+      <Route path='/search-profile/:id' component={User} isPrivate />
     </Switch>
   );
 }

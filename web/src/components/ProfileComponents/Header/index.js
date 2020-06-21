@@ -17,7 +17,6 @@ function Header() {
   async function handleSubmit(data) {
     try {
       const response = await api.put(`update-user-data/${user.id}`, data);
-      console.log(response);
       updateUser(response.data);
     } catch (error) {
       toast(error.response.data.error);

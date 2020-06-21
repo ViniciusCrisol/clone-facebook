@@ -69,6 +69,31 @@ class ItemsController {
       return res.status(400).json({ error: 'Error. Try again' });
     }
   }
+
+  async show(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+
+      const user = await knex('users').where('id', id).first();
+
+      const { name, avatar, bio, birthday, location, work_place } = user;
+
+      const serializedUser = {
+        id,
+        birthday,
+        location,
+        work_place,
+        name,
+        avatar,
+        bio,
+        avatar_url: `http://192.168.100.6:3333/uploads/${user.avatar}`,
+      };
+
+      return res.json(serializedUser);
+    } catch {
+      return res.status(400).json({ error: "Error. User can't be loaded!" });
+    }
+  }
 }
 
 export default ItemsController;

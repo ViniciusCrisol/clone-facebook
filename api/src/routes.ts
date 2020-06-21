@@ -23,6 +23,7 @@ routes.use(authMiddleware);
 routes.get('/check-token', (req, res) => res.json({ ok: true }));
 
 routes.put('/update-user-data/:id', userController.update);
+routes.get('/show-user/:id', userController.show);
 
 routes.get('/search/:search', searchController.store);
 

@@ -2,11 +2,9 @@ import styled from 'styled-components';
 import { fadeIn } from '../../../styles/animations';
 
 export const Container = styled.div`
-  max-height: 240px;
   border-bottom: 2px solid var(--light-gray-opacity);
 
   display: flex;
-  align-items: center;
 
   img {
     height: 150px;
@@ -21,11 +19,10 @@ export const Container = styled.div`
     justify-content: space-between;
 
     main {
-      max-width: 970px;
-
       h1 {
         font-size: 30px;
       }
+
       form {
         position: relative;
 
@@ -64,21 +61,18 @@ export const Container = styled.div`
           padding: 5px;
           border-radius: 10px;
 
-          width: 520px;
-          height: 100px;
+          width: 620px;
+          height: 80px;
 
           background: none;
           resize: none;
           border: 0;
-
-          opacity: 1;
         }
       }
     }
 
     footer {
       height: 50px;
-      margin-top: 30px;
 
       display: flex;
       align-items: center;

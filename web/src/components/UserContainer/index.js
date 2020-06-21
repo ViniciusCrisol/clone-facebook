@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Container } from './styles';
 
-function UserContainer({ name, location, avatar_url }) {
+function UserContainer({ name, location, avatar_url, userID }) {
   return (
-    <Container to='/'>
+    <Container to={`/search-profile/${userID}`}>
       <img src={avatar_url} alt={name} />
       <div>
         <h5>{name}</h5>

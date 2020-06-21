@@ -30,6 +30,7 @@ export const Container = styled.div`
     div {
       margin-left: 15px;
       span {
+        font-size: 16px;
         color: var(--light-text);
       }
     }
