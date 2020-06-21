@@ -29,14 +29,13 @@ export const MainContainer = styled.div`
     background: var(--light-blue);
     box-shadow: 0px 13px 30px var(--dark-blue);
     border-radius: 50%;
+    margin-right: 10px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    margin-right: 10px;
-
-    transition: filter 200ms ease;
+    transition: filter, transform 200ms ease-in-out;
 
     svg {
       color: white;
@@ -44,6 +43,7 @@ export const MainContainer = styled.div`
 
     &:hover {
       filter: brightness(1.1);
+      transform: translateY(-4px);
     }
   }
 
