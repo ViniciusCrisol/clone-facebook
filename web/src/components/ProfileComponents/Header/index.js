@@ -14,8 +14,8 @@ function Header() {
   const { user, updateUser } = useAuth();
 
   const [editInput, setEditInput] = useState(false);
+  const [modal, setModal] = useState(false);
   const [notifications, setNotifications] = useState([]);
-  const [modal, setModal] = useState(true);
 
   async function handleSubmit(data) {
     try {
