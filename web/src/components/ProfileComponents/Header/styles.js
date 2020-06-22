@@ -11,29 +11,74 @@ export const Container = styled.div`
     border-radius: 50%;
   }
 
-  div {
+  > div {
     margin-left: 30px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    main {
+    > main {
+      position: relative;
+
       h1 {
         font-size: 30px;
+      }
+
+      > button {
+        width: 30px;
+        height: 30px;
+
+        position: absolute;
+        right: -70px;
+        top: 22px;
+
+        background: none;
+
+        transition: 200ms ease;
+
+        span {
+          position: absolute;
+          right: -8px;
+          top: -10px;
+
+          width: 23px;
+          height: 23px;
+
+          border-radius: 50%;
+          background-color: var(--light-text);
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        svg {
+          color: var(--light-text);
+        }
+
+        &:hover {
+          transform: scale(1.1);
+
+          svg {
+            color: var(--light-blue);
+            transition: 200ms ease;
+          }
+        }
       }
 
       form {
         position: relative;
 
         > button {
+          width: 30px;
+          height: 30px;
           background: none;
 
           position: absolute;
           top: -15px;
 
           svg {
-            margin-right: 10px;
             color: var(--light-text);
 
             transition: 200ms ease;

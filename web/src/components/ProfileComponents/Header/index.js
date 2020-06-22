@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { FiEdit } from 'react-icons/fi';
+import { FiEdit, FiBell } from 'react-icons/fi';
 
-import { useAuth } from '../../../Hooks/AuthContext';
 import api from '../../../services/api';
+import Modal from '../NotificatioModal';
+import { useAuth } from '../../../Hooks/AuthContext';
 
 import { Container } from './styles';
 
@@ -13,6 +14,7 @@ function Header() {
   const { user, updateUser } = useAuth();
 
   const [editInput, setEditInput] = useState(false);
+  const [modal, setModal] = useState(true);
 
   async function handleSubmit(data) {
     try {
@@ -45,6 +47,12 @@ function Header() {
               <FiEdit size={30} color={editInput ? '#5085e8' : ''} />
             </button>
           </Form>
+
+          <button onClick={() => setModal(!modal)}>
+            <FiBell size={30} color={modal ? '#5085e8' : ''} />
+            <span>12</span>
+          </button>
+          {modal && <Modal />}
         </main>
         <footer>
           <ul>
