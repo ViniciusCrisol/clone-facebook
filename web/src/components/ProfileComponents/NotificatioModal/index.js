@@ -1,12 +1,16 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Notification } from './styles';
 
-function NotificatioModal() {
+function NotificatioModal({ notifications }) {
   return (
     <Container>
       <main>
-        <div></div>
+        {notifications.map((notification) => (
+          <Notification key={notification.id}>
+            <p>{notification.message}</p>
+          </Notification>
+        ))}
       </main>
     </Container>
   );

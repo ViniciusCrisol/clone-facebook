@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -14,6 +14,7 @@ function Header() {
   const { user, updateUser } = useAuth();
 
   const [editInput, setEditInput] = useState(false);
+  const [notifications, setNotifications] = useState([]);
   const [modal, setModal] = useState(true);
 
   async function handleSubmit(data) {
@@ -24,6 +25,16 @@ function Header() {
       toast(error.response.data.error);
     }
   }
+
+  useEffect(() => {
+    async function loadNotifications() {
+      const response = await api.get('list-friend-request');
+
+      setNotifications(response.data);
+    }
+
+    loadNotifications();
+  }, [notifications]);
 
   return (
     <Container>
@@ -50,9 +61,9 @@ function Header() {
 
           <button onClick={() => setModal(!modal)}>
             <FiBell size={30} color={modal ? '#5085e8' : ''} />
-            <span>12</span>
+            <span>{notifications.length}</span>
           </button>
-          {modal && <Modal />}
+          {modal && <Modal notifications={notifications} />}
         </main>
         <footer>
           <ul>

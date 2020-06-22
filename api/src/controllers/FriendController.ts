@@ -21,6 +21,7 @@ class FriendController {
 
     await knex('friend_requests').insert({
       user: userId,
+      name: user.name,
       friend: friendId,
     });
 
@@ -35,7 +36,14 @@ class FriendController {
       .from('friend_requests')
       .where('friend', id);
 
-    return res.json(requests);
+    const notifications = requests.map((notification) => {
+      return {
+        id: notification.id,
+        message: `${notification.name} sent you a friend request.`,
+      };
+    });
+
+    return res.json(notifications);
   }
 }
 

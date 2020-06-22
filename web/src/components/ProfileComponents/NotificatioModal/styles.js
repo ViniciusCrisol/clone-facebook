@@ -6,22 +6,39 @@ export const Container = styled.div`
   top: 56px;
 
   width: 320px;
-  height: 360px;
+  height: 355px;
 
   z-index: 30;
 
-  background-color: lightblue;
+  background-color: white;
+  border: 4px solid var(--light-gray);
   border-radius: 10px;
-
-  padding: 15px;
+  padding: 7.5px 0 0 0;
 
   main {
-    div {
-      width: 2px;
-      height: 20px;
+    height: 100%;
 
-      margin: 0 auto;
-      background-color: red;
+    overflow-y: scroll;
+
+    overflow-y: scroll;
+
+    ::-webkit-scrollbar {
+      display: none;
     }
+  }
+`;
+
+export const Notification = styled.div`
+  height: 50px;
+  width: 94%;
+
+  margin: 7.5px auto;
+  padding: 5px;
+
+  background-color: var(--light-gray-opacity);
+  border-radius: 10px;
+
+  p {
+    font-size: 12px;
   }
 `;
