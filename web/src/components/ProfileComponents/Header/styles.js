@@ -11,7 +11,7 @@ export const Container = styled.div`
   }
 
   > div {
-    margin-left: 30px;
+    margin-left: 15px;
 
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@ export const Container = styled.div`
       position: relative;
 
       h1 {
-        font-size: 30px;
+        font-size: 26px;
       }
 
       > button {
@@ -59,7 +59,7 @@ export const Container = styled.div`
           background: none;
 
           position: absolute;
-          top: -15px;
+          top: -35px;
           right: 40px;
 
           span {

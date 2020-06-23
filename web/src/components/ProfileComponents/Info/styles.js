@@ -19,17 +19,13 @@ export const Container = styled.div`
   border-radius: 10px;
 
   padding: 15px;
-  margin-top: 15px;
+  margin: 15px;
 
   display: flex;
   align-items: center;
 
   font-size: 20px;
   color: var(--light-gray);
-
-  & + div {
-    margin-left: 15px;
-  }
 
   div {
     display: flex;
@@ -50,14 +46,10 @@ export const CreateContainer = styled.div`
   border: 2px dashed var(--light-gray);
   border-radius: 10px;
 
-  margin-top: 15px;
+  margin: 15px;
 
   display: flex;
   align-items: center;
-
-  & + div {
-    margin-left: 15px;
-  }
 
   form {
     width: 100%;
