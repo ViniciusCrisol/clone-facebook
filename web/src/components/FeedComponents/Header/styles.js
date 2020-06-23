@@ -10,11 +10,10 @@ export const Container = styled.ul`
 
   li {
     button {
-      background: none;
       border: 0;
+      background: none;
 
       font-size: 23px;
-
       line-height: 25px;
       font-weight: Regular;
       color: var(--text-opacity);

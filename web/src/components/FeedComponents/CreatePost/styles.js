@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
   height: 80px;
 
   margin-top: 30px;
@@ -13,6 +9,10 @@ export const Container = styled.div`
   border-radius: 10px;
   background-color: white;
   box-shadow: 0px 3px 1px var(--light-gray-opacity);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   img {
     width: 50px;

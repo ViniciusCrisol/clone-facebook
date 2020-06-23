@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { fadeIn } from './animations';
 
 const Container = styled.div`
-  animation: 700ms ${fadeIn} ease-out;
+  animation: 700ms ${fadeIn} ease;
   height: 80%;
 
   flex: 1;
@@ -37,7 +37,7 @@ const Container = styled.div`
       border-radius: 10px;
       box-shadow: 0px 3px 1px #5085e8bb;
 
-      transition: 250ms;
+      transition: 250ms ease;
 
       color: white;
       font-size: 16px;

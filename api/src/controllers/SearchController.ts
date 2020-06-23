@@ -9,7 +9,7 @@ class SessionController {
 
     const currentPage = page ? page : 1;
 
-    const offset = (<any>currentPage - 1) * 27;
+    const offset = (<number>currentPage - 1) * 27;
 
     const users = await knex
       .select('*')

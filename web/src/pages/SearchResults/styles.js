@@ -3,11 +3,11 @@ import { fadeIn } from '../../styles/animations';
 
 export const Wrapper = styled.div`
   flex: 1;
-  animation: 700ms ${fadeIn} ease-out;
+  animation: 700ms ${fadeIn} ease;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 
   > div {
     width: 100%;
@@ -26,7 +26,6 @@ export const Container = styled.div`
   margin-top: 60px;
 
   display: flex;
-
   flex-wrap: wrap;
   justify-content: center;
 `;
@@ -45,7 +44,7 @@ export const LoadMoreButton = styled.button`
   font-weight: bold;
   font-size: 16px;
 
-  transition: filter 200ms;
+  transition: filter 200ms ease;
 
   &:hover {
     filter: brightness(1.1);

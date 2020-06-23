@@ -66,17 +66,16 @@ export const Container = styled.div`
     align-items: center;
 
     button {
-      color: var(--light-text);
-      font-weight: bold;
-
       background: none;
+
+      font-weight: bold;
+      color: var(--light-text);
 
       display: flex;
       align-items: flex-end;
 
       svg {
         margin-right: 10px;
-
         transition: 200ms ease;
       }
 

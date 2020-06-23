@@ -16,8 +16,8 @@ export const Container = styled(Form)`
   justify-content: space-between;
 
   input {
-    height: 100%;
     flex: 1;
+    height: 100%;
   }
 
   button {

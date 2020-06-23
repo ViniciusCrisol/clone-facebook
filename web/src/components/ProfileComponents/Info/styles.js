@@ -4,28 +4,28 @@ export const Wrapper = styled.div`
   margin-top: 15px;
 
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
 `;
 
 export const Container = styled.div`
   height: 100px;
   width: 270px;
 
+  border-radius: 10px;
   background-color: white;
   box-shadow: 0px 3px 0px var(--light-gray-opacity);
   border: 1px solid var(--light-gray-opacity);
-  border-radius: 10px;
 
   padding: 15px;
   margin: 15px;
 
-  display: flex;
-  align-items: center;
-
   font-size: 20px;
   color: var(--light-gray);
+
+  display: flex;
+  align-items: center;
 
   div {
     display: flex;
@@ -41,10 +41,10 @@ export const CreateContainer = styled.div`
   height: 100px;
   width: 270px;
 
+  border-radius: 10px;
   background-color: white;
   box-shadow: 0px 3px 0px var(--light-gray);
   border: 2px dashed var(--light-gray);
-  border-radius: 10px;
 
   margin: 15px;
 
@@ -58,8 +58,8 @@ export const CreateContainer = styled.div`
     padding: 15px;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
     input {
       border: 0;

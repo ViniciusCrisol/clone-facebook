@@ -4,9 +4,9 @@ export const Wrapper = styled.div`
   margin-top: 15px;
 
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
 `;
 
 export const Container = styled.div`

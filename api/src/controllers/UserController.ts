@@ -43,18 +43,18 @@ class UserController {
 
   async update(req: Request, res: Response) {
     try {
-      const { userId: id } = req;
+      const { userId } = req;
 
       const updatedUser = req.body;
 
-      await knex('users').where('id', id).update(updatedUser);
+      await knex('users').where('id', userId).update(updatedUser);
 
-      const user = await knex('users').where('id', id).first();
+      const user = await knex('users').where('id', userId).first();
 
       const { name, avatar, bio, birthday, location, work_place } = user;
 
       const serializedUser = {
-        id,
+        id: userId,
         birthday,
         location,
         work_place,

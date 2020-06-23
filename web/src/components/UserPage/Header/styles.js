@@ -4,7 +4,7 @@ import { fadeIn } from '../../../styles/animations';
 export const Container = styled.div`
   flex: 1;
   position: relative;
-  animation: 700ms ${fadeIn} ease-out;
+  animation: 700ms ${fadeIn} ease;
 `;
 
 export const MainContainer = styled.div`
@@ -35,7 +35,7 @@ export const MainContainer = styled.div`
     align-items: center;
     justify-content: center;
 
-    transition: filter, transform 200ms ease-in-out;
+    transition: filter, transform 200ms ease;
 
     svg {
       color: white;

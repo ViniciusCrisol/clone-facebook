@@ -6,6 +6,15 @@ class FriendRequestController {
     const { userId } = req;
     const { id: friendId } = req.params;
 
+    const checkFriendshipExists = await knex('friends')
+      .where('user', userId)
+      .andWhere('friend', friendId)
+      .first();
+
+    if (checkFriendshipExists) {
+      return res.status(401).json({ error: 'Friendship already exists !' });
+    }
+
     if (userId === Number(friendId)) {
       return res
         .status(401)
@@ -38,12 +47,12 @@ class FriendRequestController {
   }
 
   async index(req: Request, res: Response) {
-    const { userId: id } = req;
+    const { userId } = req;
 
     const requests = await knex
       .select('*')
       .from('friend_requests')
-      .where('friend', id);
+      .where('friend', userId);
 
     const notifications = requests.map((notification) => {
       return {
@@ -57,22 +66,22 @@ class FriendRequestController {
 
   async update(req: Request, res: Response) {
     try {
-      const { userId: user } = req;
+      const { userId } = req;
       const { id: notificationId, response: userResponse } = req.params;
 
       if (Boolean(userResponse) === true) {
-        const { friend } = await knex('friend_requests')
+        const { user: friendId } = await knex('friend_requests')
           .where('id', notificationId)
           .first();
 
         await knex('friends').insert({
-          user,
-          friend,
+          user: userId,
+          friend: friendId,
         });
 
         await knex('friends').insert({
-          user: friend,
-          friend: user,
+          user: friendId,
+          friend: userId,
         });
 
         await knex('friend_requests').where('id', notificationId).del();

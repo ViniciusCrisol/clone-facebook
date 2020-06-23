@@ -54,13 +54,14 @@ export const Container = styled.div`
         position: relative;
 
         > button {
-          width: 30px;
-          height: 30px;
-          background: none;
-
           position: absolute;
           top: -35px;
           right: 40px;
+
+          width: 30px;
+          height: 30px;
+
+          background: none;
 
           span {
             position: absolute;
@@ -99,7 +100,9 @@ export const Container = styled.div`
         .active {
           background-color: white;
           box-shadow: 0px 3px 1px var(--light-gray-opacity);
-          animation: 700ms ${fadeIn} ease-out;
+
+          animation: 700ms ${fadeIn} ease;
+
           color: var(--text-opacity);
         }
 
@@ -135,7 +138,6 @@ export const Container = styled.div`
         li {
           a {
             font-size: 18px;
-
             line-height: 25px;
             font-weight: Regular;
             color: var(--text-opacity);

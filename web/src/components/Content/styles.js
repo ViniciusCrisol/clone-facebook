@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  flex: 1;
-  display: flex;
-
+  z-index: 20;
   padding: 50px 15px;
   box-shadow: -8px 0px 8px -5px rgba(201, 201, 201, 0.4);
 
-  z-index: 20;
+  flex: 1;
+  display: flex;
 `;
 
 export const Layout = styled.main`

@@ -41,39 +41,37 @@ export const Content = styled.div`
   ul {
     margin-top: 50px;
 
-    > div {
-      h4 {
-        margin-top: 30px;
-        font-size: 18px;
+    h4 {
+      margin-top: 30px;
+      font-size: 18px;
+    }
+
+    button {
+      margin-top: 30px;
+
+      display: flex;
+      align-items: center;
+
+      border: 0;
+      background: none;
+
+      font-size: 18px;
+      font-weight: Medium;
+
+      opacity: 0.7;
+
+      svg {
+        margin-right: 10px;
+        color: var(--light-blue);
+        transition: 200ms ease;
       }
 
-      button {
-        margin-top: 30px;
-
-        display: flex;
-        align-items: center;
-
-        border: 0;
-        background: none;
-
-        font-size: 18px;
-        font-weight: Medium;
-
-        opacity: 0.7;
+      &:hover {
+        opacity: 1;
 
         svg {
-          margin-right: 10px;
-          color: var(--light-blue);
-          transition: 200ms ease;
-        }
-
-        &:hover {
-          opacity: 1;
-
-          svg {
-            transform: scale(1.2);
-            color: lightcoral;
-          }
+          transform: scale(1.2);
+          color: lightcoral;
         }
       }
     }
@@ -90,7 +88,6 @@ export const Content = styled.div`
 
       a {
         font-size: 18px;
-        font-weight: Medium;
         color: var(--text);
 
         opacity: 0.7;
@@ -98,7 +95,7 @@ export const Content = styled.div`
         display: flex;
         align-items: center;
 
-        transition: opacity 200ms;
+        transition: opacity 200ms ease;
 
         > svg {
           margin-right: 10px;
