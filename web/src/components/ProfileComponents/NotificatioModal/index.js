@@ -1,9 +1,15 @@
 import React from 'react';
 import { AiOutlineCheck, AiOutlineDelete } from 'react-icons/ai';
 
+import api from '../../../services/api';
+
 import { Container, Notification } from './styles';
 
 function NotificatioModal({ notifications }) {
+  async function handleSubmit({ response, id }) {
+    api.put(`response-request/${id}/${response}`);
+  }
+
   return (
     <Container>
       {notifications.length > 0 ? (
@@ -12,10 +18,18 @@ function NotificatioModal({ notifications }) {
             <Notification key={notification.id}>
               <p>{notification.message}</p>
               <footer>
-                <button>
+                <button
+                  onClick={() =>
+                    handleSubmit({ response: true, id: notification.id })
+                  }
+                >
                   <AiOutlineCheck size={20} />
                 </button>
-                <button>
+                <button
+                  onClick={() =>
+                    handleSubmit({ response: false, id: notification.id })
+                  }
+                >
                   <AiOutlineDelete size={20} />
                 </button>
               </footer>

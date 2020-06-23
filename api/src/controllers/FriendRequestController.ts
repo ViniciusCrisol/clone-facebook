@@ -19,6 +19,15 @@ class FriendRequestController {
       return res.status(400).json({ error: 'User not found !' });
     }
 
+    const notification = await knex('friend_requests')
+      .where('user', userId)
+      .andWhere('friend', friendId)
+      .first();
+
+    if (notification) {
+      return res.json({ ok: true });
+    }
+
     await knex('friend_requests').insert({
       user: userId,
       name: user.name,
@@ -66,11 +75,11 @@ class FriendRequestController {
           friend: user,
         });
 
-        await knex('friend_requests').where('id', notificationId).first().del();
+        await knex('friend_requests').where('id', notificationId).del();
 
         return res.json({ ok: true });
       } else {
-        await knex('friend_requests').where('id', notificationId).first().del();
+        await knex('friend_requests').where('id', notificationId).del();
       }
     } catch {
       return res.status(400).json({ error: 'Error. Try again' });
