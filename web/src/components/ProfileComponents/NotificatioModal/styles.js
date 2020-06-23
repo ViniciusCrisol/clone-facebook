@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: absolute;
-  right: -65px;
-  top: 20px;
+  right: -5px;
+  top: 0;
 
-  width: 320px;
+  width: 280px;
   height: 355px;
 
   z-index: 30;
@@ -15,11 +15,11 @@ export const Container = styled.div`
   border-radius: 10px;
   padding: 7.5px 0 0 0;
 
-  h1 {
-    margin: 60px auto;
+  h2 {
+    margin: 30px auto;
 
     text-align: center;
-    font-size: 18px;
+    text-transform: uppercase;
     color: var(--light-text);
   }
 
