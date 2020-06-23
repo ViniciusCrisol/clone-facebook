@@ -57,13 +57,12 @@ function Header() {
             >
               <FiEdit size={30} color={editInput ? '#5085e8' : ''} />
             </button>
+            <button onClick={() => setModal(!modal)}>
+              <FiBell size={30} color={modal ? '#5085e8' : ''} />
+              <span>{notifications.length}</span>
+            </button>
+            {modal && <Modal notifications={notifications} />}
           </Form>
-
-          <button onClick={() => setModal(!modal)}>
-            <FiBell size={30} color={modal ? '#5085e8' : ''} />
-            <span>{notifications.length}</span>
-          </button>
-          {modal && <Modal notifications={notifications} />}
         </main>
         <footer>
           <ul>

@@ -3,7 +3,6 @@ import { fadeIn } from '../../../styles/animations';
 
 export const Container = styled.div`
   border-bottom: 2px solid var(--light-gray-opacity);
-
   display: flex;
 
   img {
@@ -37,22 +36,6 @@ export const Container = styled.div`
 
         transition: 200ms ease;
 
-        span {
-          position: absolute;
-          right: -8px;
-          top: -10px;
-
-          width: 23px;
-          height: 23px;
-
-          border-radius: 50%;
-          background-color: var(--light-text);
-
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
         svg {
           color: var(--light-text);
         }
@@ -77,11 +60,32 @@ export const Container = styled.div`
 
           position: absolute;
           top: -15px;
+          right: 40px;
+
+          span {
+            position: absolute;
+            right: -8px;
+            top: -10px;
+
+            width: 23px;
+            height: 23px;
+
+            border-radius: 50%;
+            background-color: var(--light-text);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
 
           svg {
             color: var(--light-text);
 
             transition: 200ms ease;
+          }
+
+          & + button {
+            right: 0px;
           }
 
           &:hover {
@@ -145,6 +149,22 @@ export const Container = styled.div`
             margin-left: 30px;
           }
         }
+      }
+    }
+
+    @media (max-width: 1250px) {
+      width: 100%;
+
+      main {
+        form {
+          textarea {
+            width: 100%;
+            height: 140px;
+          }
+        }
+      }
+      footer {
+        display: none;
       }
     }
   }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 340px;
+  width: 290px;
   height: 100%;
 
   background-color: var(--menu-background);
@@ -9,6 +9,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 920px) {
+    display: none;
+  }
 `;
 
 export const Content = styled.div`
