@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import knex from '../database/connections';
 
-class FriendController {
+class FriendRequestController {
   async store(req: Request, res: Response) {
     const { userId } = req;
     const { id: friendId } = req.params;
@@ -45,6 +45,37 @@ class FriendController {
 
     return res.json(notifications);
   }
+
+  async update(req: Request, res: Response) {
+    try {
+      const { userId: user } = req;
+      const { id: notificationId, response: userResponse } = req.params;
+
+      if (Boolean(userResponse) === true) {
+        const { friend } = await knex('friend_requests')
+          .where('id', notificationId)
+          .first();
+
+        await knex('friends').insert({
+          user,
+          friend,
+        });
+
+        await knex('friends').insert({
+          user: friend,
+          friend: user,
+        });
+
+        await knex('friend_requests').where('id', notificationId).first().del();
+
+        return res.json({ ok: true });
+      } else {
+        await knex('friend_requests').where('id', notificationId).first().del();
+      }
+    } catch {
+      return res.status(400).json({ error: 'Error. Try again' });
+    }
+  }
 }
 
-export default FriendController;
+export default FriendRequestController;

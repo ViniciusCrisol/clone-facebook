@@ -5,7 +5,7 @@ import multerConfig from './config/multer';
 import UserController from './controllers/UserController';
 import SessionController from './controllers/SessionController';
 import SearchController from './controllers/SearchController';
-import FriendController from './controllers/FriendController';
+import FriendRequestController from './controllers/FriendRequestController';
 
 import authMiddleware from './middlewares/auth';
 
@@ -15,7 +15,7 @@ const upload = multer(multerConfig);
 const userController = new UserController();
 const sessionController = new SessionController();
 const searchController = new SearchController();
-const friendController = new FriendController();
+const friendRequestController = new FriendRequestController();
 
 // Sign Up/Sign In
 
@@ -37,7 +37,8 @@ routes.get('/search/:search', searchController.store);
 
 // Friends
 
-routes.post('/friend-request/:id', friendController.store);
-routes.get('/list-friend-request', friendController.index);
+routes.post('/friend-request/:id', friendRequestController.store);
+routes.get('/list-friend-request', friendRequestController.index);
+routes.put('/response-request/:id/:response', friendRequestController.update);
 
 export default routes;
