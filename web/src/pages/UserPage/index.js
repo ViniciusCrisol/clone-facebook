@@ -26,15 +26,7 @@ function UserPage() {
 
   return (
     <Container>
-      <Header
-        id={currentPage}
-        avatar_url={user.avatar_url}
-        name={user.name}
-        bio={user.bio}
-        birthday={user.birthday}
-        location={user.location}
-        work_place={user.work_place}
-      />
+      <Header user={user} />
     </Container>
   );
 }

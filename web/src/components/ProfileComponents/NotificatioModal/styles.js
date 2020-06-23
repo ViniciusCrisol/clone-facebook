@@ -15,6 +15,14 @@ export const Container = styled.div`
   border-radius: 10px;
   padding: 7.5px 0 0 0;
 
+  h1 {
+    margin: 60px auto;
+
+    text-align: center;
+    font-size: 18px;
+    color: var(--light-text);
+  }
+
   main {
     height: 100%;
 
@@ -29,16 +37,44 @@ export const Container = styled.div`
 `;
 
 export const Notification = styled.div`
-  height: 50px;
+  height: auto;
   width: 94%;
 
   margin: 7.5px auto;
-  padding: 5px;
+  padding: 7.5px 12px;
 
   background-color: var(--light-gray-opacity);
   border-radius: 10px;
 
   p {
     font-size: 12px;
+  }
+
+  button {
+    height: 26px;
+    width: 26px;
+
+    margin: 10px 0 0 auto;
+
+    border-radius: 50%;
+    background-color: var(--light-blue);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: filter 200ms ease;
+
+    & + button {
+      margin-left: 10px;
+
+      background: lightcoral;
+    }
+
+    &:hover {
+      filter: brightness(1.1);
+    }
   }
 `;
