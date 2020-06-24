@@ -5,7 +5,7 @@ import { Container } from './styles';
 
 import api from '../../services/api';
 
-import Header from '../../components/UsersPage/Header';
+import Header from '../../components/UsersComponents/Header';
 
 function UserPage() {
   const location = useParams();

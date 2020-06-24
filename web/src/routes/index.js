@@ -7,12 +7,13 @@ import Feed from '../pages/Feed';
 
 import ProfilePosts from '../pages/Profile/posts';
 import ProfileInfo from '../pages/Profile/info';
+import Friends from '../pages/Friends';
 
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 
 import Search from '../pages/SearchResults';
-import Users from '../pages/UsersPage';
+import Users from '../pages/Users';
 
 export default function Routes() {
   return (
@@ -29,6 +30,8 @@ export default function Routes() {
 
       <Route path='/search/:search' component={Search} isPrivate />
       <Route path='/search-profile/:id' component={Users} isPrivate />
+
+      <Route path='/friends' component={Friends} isPrivate />
     </Switch>
   );
 }
