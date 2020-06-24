@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MdPersonAdd } from 'react-icons/md';
 import { toast } from 'react-toastify';
 
-import { Container, MainContainer } from './styles';
+import { Container, Content } from './styles';
 
 import Info from '../Info';
 import api from '../../../services/api';
@@ -21,7 +21,7 @@ function Header({ user }) {
 
   return (
     <Container>
-      <MainContainer>
+      <Content>
         <img src={user.avatar_url} alt={user.name} />
 
         {!user.friend && (
@@ -42,7 +42,7 @@ function Header({ user }) {
           <h1>{user.name}</h1>
           <p>{user.bio}</p>
         </main>
-      </MainContainer>
+      </Content>
       <Info
         birthday={user.birthday}
         work_place={user.work_place}

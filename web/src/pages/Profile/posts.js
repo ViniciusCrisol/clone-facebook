@@ -4,7 +4,7 @@ import ProfileWrapper from '../../components/ProfileComponents/Wrapper';
 import CreatePost from '../../components/FeedComponents/CreatePost';
 
 function Profile() {
-  const [post, setPost] = useState(null);
+  const [post, setPost] = useState([]);
 
   return (
     <ProfileWrapper>

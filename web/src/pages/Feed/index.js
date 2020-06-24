@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Container } from './styles';
 
-import HeaderFeed from '../../components/FeedComponents/Header';
 import CreatePost from '../../components/FeedComponents/CreatePost';
-import Post from '../../components/FeedComponents/Post';
 import SearchBar from '../../components/FeedComponents/SearchBar';
+import HeaderFeed from '../../components/FeedComponents/Header';
+import Post from '../../components/FeedComponents/Post';
 
 function feed() {
   return (

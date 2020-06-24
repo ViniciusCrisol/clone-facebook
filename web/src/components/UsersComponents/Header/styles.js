@@ -7,7 +7,7 @@ export const Container = styled.div`
   animation: 700ms ${fadeIn} ease;
 `;
 
-export const MainContainer = styled.div`
+export const Content = styled.div`
   padding-bottom: 15px;
   border-bottom: 2px solid var(--light-gray-opacity);
 
