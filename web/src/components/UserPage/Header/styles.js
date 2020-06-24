@@ -41,6 +41,16 @@ export const MainContainer = styled.div`
       color: white;
     }
 
+    &:disabled {
+      background: var(--text-opacity);
+      box-shadow: 0px 13px 30px var(--text-opacity);
+
+      &:hover {
+        filter: brightness(1);
+        transform: translateY(0);
+      }
+    }
+
     &:hover {
       filter: brightness(1.1);
       transform: translateY(-4px);

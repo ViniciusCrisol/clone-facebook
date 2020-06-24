@@ -73,12 +73,25 @@ class UserController {
   async show(req: Request, res: Response) {
     try {
       const { id } = req.params;
+      const { userId } = req;
 
       const user = await knex('users').where('id', id).first();
+
+      const friend = await knex('friends')
+        .where('user', userId)
+        .andWhere('friend', id)
+        .first();
+
+      const friendRequest = await knex('friend_requests')
+        .where('user', userId)
+        .andWhere('friend', id)
+        .first();
 
       const { name, avatar, bio, birthday, location, work_place } = user;
 
       const serializedUser = {
+        friend: friend ? true : false,
+        friend_request: friendRequest ? true : false,
         id,
         birthday,
         location,

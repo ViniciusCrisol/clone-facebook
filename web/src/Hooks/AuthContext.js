@@ -88,10 +88,6 @@ function AuthProvider({ children }) {
 function useAuth() {
   const context = useContext(AuthContext);
 
-  if (!context) {
-    console.log('User must be signed');
-  }
-
   return context;
 }
 

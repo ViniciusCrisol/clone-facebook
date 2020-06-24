@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MdPersonAdd } from 'react-icons/md';
 import { toast } from 'react-toastify';
 
@@ -8,7 +8,10 @@ import Info from '../Info';
 import api from '../../../services/api';
 
 function Header({ user }) {
+  const [friendRequest, setFriendRequest] = useState(user.friend_request);
+
   async function addFriend() {
+    setFriendRequest(true);
     try {
       api.post(`friend-request/${user.id}`);
     } catch (error) {
@@ -21,9 +24,19 @@ function Header({ user }) {
       <MainContainer>
         <img src={user.avatar_url} alt={user.name} />
 
-        <button onClick={() => addFriend(user.id)}>
-          <MdPersonAdd size={30} />
-        </button>
+        {!user.friend && (
+          <>
+            {friendRequest ? (
+              <button disabled onClick={() => addFriend(user.id)}>
+                <MdPersonAdd size={30} />
+              </button>
+            ) : (
+              <button onClick={() => addFriend(user.id)}>
+                <MdPersonAdd size={30} />
+              </button>
+            )}
+          </>
+        )}
 
         <main>
           <h1>{user.name}</h1>

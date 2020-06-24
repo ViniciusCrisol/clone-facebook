@@ -17,8 +17,6 @@ function UserPage() {
     async function loadUser() {
       const response = await api.get(`/show-user/${currentPage}`);
 
-      console.log(response.data);
-
       setUser(response.data);
     }
     loadUser();
