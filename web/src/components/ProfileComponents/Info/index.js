@@ -9,7 +9,7 @@ import api from '../../../services/api';
 
 import { useAuth } from '../../../Hooks/AuthContext';
 
-import { Container, CreateContainer, Wrapper } from './styles';
+import { Wrapper, Container, CreateContainer } from './styles';
 
 function InfoContainer() {
   const { user, updateUser } = useAuth();
