@@ -29,11 +29,12 @@ function Header() {
   useEffect(() => {
     async function loadNotifications() {
       const response = await api.get('list-friend-request');
+
       setNotifications(response.data);
     }
 
     loadNotifications();
-  }, []);
+  }, [notifications]);
 
   return (
     <Container>
