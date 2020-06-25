@@ -31,6 +31,11 @@ export const Container = styled.header`
       align-items: center;
       justify-content: space-between;
 
+      section {
+        width: 50px;
+        height: 50px;
+      }
+
       > div {
         display: flex;
       }
