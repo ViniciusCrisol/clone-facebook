@@ -33,7 +33,6 @@ function Header() {
       data.append('image', image);
 
       const response = await api.put('update-avatar', data);
-      console.log(response);
       updateUser(response.data);
     } catch (error) {
       toast(error.response.data.error);
