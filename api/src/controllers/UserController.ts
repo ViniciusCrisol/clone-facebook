@@ -59,7 +59,6 @@ class UserController {
         location,
         work_place,
         name,
-        avatar,
         bio,
         avatar_url: `http://192.168.100.6:3333/uploads/${user.avatar}`,
       };

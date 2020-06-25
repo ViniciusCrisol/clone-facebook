@@ -3,6 +3,7 @@ import { Form, Input } from '@rocketseat/unform';
 import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FiEdit, FiBell } from 'react-icons/fi';
+import { AiOutlineCamera } from 'react-icons/ai';
 
 import api from '../../../services/api';
 import Modal from '../NotificatioModal';
@@ -40,6 +41,10 @@ function Header() {
     <Container>
       <div>
         <img src={user.avatar_url} alt={user.name} />
+        <button>
+          <AiOutlineCamera size={25} color={modal ? '#5085e8' : ''} />
+        </button>
+
         <main>
           <h1>{user.name}</h1>
           <Form onSubmit={handleSubmit} initialData={{ bio: user.bio }}>
@@ -50,16 +55,19 @@ function Header() {
               maxLength={255}
               disabled={editInput ? false : true}
             />
+
             <button
               onClick={() => setEditInput(!editInput)}
               type={!editInput ? 'submit' : 'button'}
             >
               <FiEdit size={30} color={editInput ? '#5085e8' : ''} />
             </button>
+
             <button onClick={() => setModal(!modal)}>
               <FiBell size={30} color={modal ? '#5085e8' : ''} />
               <span>{notifications.length}</span>
             </button>
+
             {modal && <Modal notifications={notifications} />}
           </Form>
         </main>

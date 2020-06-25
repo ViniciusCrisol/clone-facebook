@@ -9,9 +9,42 @@ export const Container = styled.div`
 
   > div {
     display: flex;
+    position: relative;
+
+    > button {
+      position: absolute;
+      left: 110px;
+
+      width: 45px;
+      height: 45px;
+
+      border-radius: 50%;
+      background-color: var(--light-blue);
+      border: 4px solid var(--background);
+
+      display: flex;
+      flex-shrink: none;
+      align-items: center;
+      justify-content: center;
+
+      transition: 200ms ease;
+
+      > svg {
+        color: white;
+        transition: 200ms ease;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
 
     img {
       height: 150px;
+      width: 150px;
+
+      object-fit: cover;
+
       border-radius: 50%;
     }
 
@@ -87,7 +120,7 @@ export const Container = styled.div`
           }
 
           & + button {
-            right: 0px;
+            right: 0;
           }
 
           &:hover {

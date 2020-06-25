@@ -25,7 +25,7 @@ html, body , #root{
 
 body{
   -webkit-font-smoothing: antialiased !important;
-  background-color: #F6F6F9;
+  background-color: var(--background);
 }
 
 body, input , button, textarea {
@@ -51,7 +51,7 @@ li {
 }
 
 :root{
-
+--background : #F6F6F9;
 --menu-background : #f2f2f5;
 --light-blue : #5085e8;
 --dark-blue:#0341b164;

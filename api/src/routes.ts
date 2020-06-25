@@ -6,7 +6,7 @@ import UserController from './controllers/UserController';
 import SessionController from './controllers/SessionController';
 import SearchController from './controllers/SearchController';
 import FriendRequestController from './controllers/FriendRequestController';
-import FriendController from './controllers/FriendController';
+import AvatarController from './controllers/AvatarController';
 
 import authMiddleware from './middlewares/auth';
 
@@ -17,7 +17,7 @@ const userController = new UserController();
 const sessionController = new SessionController();
 const searchController = new SearchController();
 const friendRequestController = new FriendRequestController();
-const friendController = new FriendController();
+const avatarController = new AvatarController();
 
 // Sign Up/Sign In
 
@@ -33,6 +33,8 @@ routes.get('/check-token', (req, res) => res.json({ ok: true }));
 routes.put('/update-user-data', userController.update);
 routes.get('/show-user/:id', userController.show);
 
+routes.put('/update-avatar', upload.single('image'), avatarController.store);
+
 // Search user
 
 routes.get('/search/:search', searchController.store);
@@ -42,9 +44,5 @@ routes.get('/search/:search', searchController.store);
 routes.post('/friend-request/:id', friendRequestController.store);
 routes.get('/list-friend-request', friendRequestController.index);
 routes.put('/response-request/:id/:response', friendRequestController.update);
-
-// Friends
-
-routes.get('/friend-list', friendController.index);
 
 export default routes;
