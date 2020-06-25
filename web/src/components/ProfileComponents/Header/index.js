@@ -6,7 +6,7 @@ import { FiEdit, FiBell } from 'react-icons/fi';
 import { AiOutlineCamera } from 'react-icons/ai';
 
 import api from '../../../services/api';
-import Modal from '../NotificatioModal';
+import NotificationModal from '../NotificationModal';
 import { useAuth } from '../../../Hooks/AuthContext';
 
 import { Container } from './styles';
@@ -15,12 +15,25 @@ function Header() {
   const { user, updateUser } = useAuth();
 
   const [editInput, setEditInput] = useState(false);
-  const [modal, setModal] = useState(false);
   const [notifications, setNotifications] = useState([]);
+  const [openNotifications, setOpenNotifications] = useState(false);
 
   async function handleSubmit(data) {
     try {
       const response = await api.put('update-user-data', data);
+      updateUser(response.data);
+    } catch (error) {
+      toast(error.response.data.error);
+    }
+  }
+
+  async function handleSubmitAvatar(image) {
+    try {
+      const data = new FormData();
+      data.append('image', image);
+
+      const response = await api.put('update-avatar', data);
+      console.log(response);
       updateUser(response.data);
     } catch (error) {
       toast(error.response.data.error);
@@ -41,9 +54,18 @@ function Header() {
     <Container>
       <div>
         <img src={user.avatar_url} alt={user.name} />
-        <button>
-          <AiOutlineCamera size={25} color={modal ? '#5085e8' : ''} />
-        </button>
+        <label>
+          <input
+            type='file'
+            accept='image/*'
+            name='avatar'
+            onChange={(e) => handleSubmitAvatar(e.target.files[0])}
+          />
+          <AiOutlineCamera
+            size={25}
+            color={openNotifications ? '#5085e8' : ''}
+          />
+        </label>
 
         <main>
           <h1>{user.name}</h1>
@@ -63,12 +85,14 @@ function Header() {
               <FiEdit size={30} color={editInput ? '#5085e8' : ''} />
             </button>
 
-            <button onClick={() => setModal(!modal)}>
-              <FiBell size={30} color={modal ? '#5085e8' : ''} />
+            <button onClick={() => setOpenNotifications(!openNotifications)}>
+              <FiBell size={30} color={openNotifications ? '#5085e8' : ''} />
               <span>{notifications.length}</span>
             </button>
 
-            {modal && <Modal notifications={notifications} />}
+            {openNotifications && (
+              <NotificationModal notifications={notifications} />
+            )}
           </Form>
         </main>
       </div>

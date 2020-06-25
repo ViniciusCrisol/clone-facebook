@@ -11,7 +11,11 @@ export const Container = styled.div`
     display: flex;
     position: relative;
 
-    > button {
+    input[type='file'] {
+      display: none;
+    }
+
+    > label {
       position: absolute;
       left: 110px;
 
@@ -27,6 +31,7 @@ export const Container = styled.div`
       align-items: center;
       justify-content: center;
 
+      cursor: pointer;
       transition: 200ms ease;
 
       > svg {
