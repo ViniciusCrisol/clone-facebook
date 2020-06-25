@@ -25,6 +25,8 @@ export const Container = styled.header`
       width: 100%;
       height: 100%;
 
+      position: relative;
+
       margin: 0;
 
       display: flex;
@@ -53,13 +55,14 @@ export const MenuContainer = styled.div`
 
   margin: 50px 0 0 70px;
 
-  position: relative;
+  position: fixed;
+  left: 0;
 
   > div {
     display: none;
 
     > a {
-      border-bottom: 2px solid;
+      border-bottom: 2px solid var(--light-text);
 
       & + a {
         margin-left: 15px;
