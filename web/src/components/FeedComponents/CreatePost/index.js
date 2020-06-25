@@ -18,12 +18,7 @@ function CreatePost() {
         <button>
           <BsImages size={22} />
         </button>
-        <button>
-          <FiUser size={22} />
-        </button>
-        <button>
-          <FiSmile size={22} />
-        </button>
+
         <button>
           <FiCheckSquare size={30} />
         </button>

@@ -24,22 +24,23 @@ function Header({ user }) {
       <Content>
         <img src={user.avatar_url} alt={user.name} />
 
-        {!user.friend && (
-          <>
-            {friendRequest ? (
-              <button disabled onClick={() => addFriend(user.id)}>
-                <MdPersonAdd size={30} />
-              </button>
-            ) : (
-              <button onClick={() => addFriend(user.id)}>
-                <MdPersonAdd size={30} />
-              </button>
-            )}
-          </>
-        )}
-
         <main>
-          <h1>{user.name}</h1>
+          <h1>
+            {!user.friend && (
+              <>
+                {friendRequest ? (
+                  <button disabled onClick={() => addFriend(user.id)}>
+                    <MdPersonAdd size={30} />
+                  </button>
+                ) : (
+                  <button onClick={() => addFriend(user.id)}>
+                    <MdPersonAdd size={30} />
+                  </button>
+                )}
+              </>
+            )}
+            {user.name}
+          </h1>
           <p>{user.bio}</p>
         </main>
       </Content>

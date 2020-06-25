@@ -46,35 +46,34 @@ export const Notification = styled.div`
   background-color: var(--light-gray-opacity);
   border-radius: 10px;
 
-  p {
-    font-size: 12px;
-  }
+  footer {
+    width: min-content;
+    margin: 10px auto 0;
 
-  button {
-    height: 26px;
-    width: 26px;
+    button {
+      height: 30px;
+      width: 30px;
 
-    margin: 10px 0 0 auto;
+      border-radius: 50%;
+      background-color: var(--light-blue);
 
-    border-radius: 50%;
-    background-color: var(--light-blue);
+      color: white;
 
-    color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+      transition: filter 200ms ease;
 
-    transition: filter 200ms ease;
+      & + button {
+        margin-left: 10px;
 
-    & + button {
-      margin-left: 10px;
+        background: lightcoral;
+      }
 
-      background: lightcoral;
-    }
-
-    &:hover {
-      filter: brightness(1.1);
+      &:hover {
+        filter: brightness(1.1);
+      }
     }
   }
 `;

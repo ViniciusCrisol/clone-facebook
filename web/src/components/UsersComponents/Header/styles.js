@@ -3,11 +3,12 @@ import { fadeIn } from '../../../styles/animations';
 
 export const Container = styled.div`
   flex: 1;
-  position: relative;
   animation: 700ms ${fadeIn} ease;
 `;
 
 export const Content = styled.div`
+  position: relative;
+
   padding-bottom: 15px;
   border-bottom: 2px solid var(--light-gray-opacity);
 
@@ -20,11 +21,11 @@ export const Content = styled.div`
 
   button {
     position: absolute;
-    right: 60px;
-    top: 30px;
+    right: 0;
+    bottom: 10px;
 
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
 
     background: var(--light-blue);
     box-shadow: 0px 13px 30px var(--dark-blue);
@@ -71,7 +72,8 @@ export const Content = styled.div`
       padding: 5px;
       border-radius: 10px;
 
-      width: 620px;
+      max-width: 620px;
+      width: 70%;
       height: 80px;
     }
   }

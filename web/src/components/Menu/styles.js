@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.header`
   width: 290px;
   height: 100%;
 
@@ -11,19 +11,62 @@ export const Container = styled.div`
   align-items: center;
 
   @media (max-width: 920px) {
-    display: none;
+    width: 100%;
+    height: 80px;
+
+    position: fixed;
+
+    z-index: 40;
+
+    box-shadow: 0px 8px 8px -5px rgba(201, 201, 201, 0.8);
+    padding: 0 15px;
+
+    > div {
+      width: 100%;
+      height: 100%;
+
+      margin: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      > div {
+        display: flex;
+      }
+
+      ul {
+        display: none;
+      }
+    }
   }
 `;
 
-export const Content = styled.div`
-  position: fixed;
-
+export const MenuContainer = styled.div`
   width: 220px;
   height: 100%;
 
   margin: 50px 0 0 70px;
 
   position: relative;
+
+  > div {
+    display: none;
+
+    > a {
+      border-bottom: 2px solid;
+
+      & + a {
+        margin-left: 15px;
+      }
+
+      &.active {
+        border-color: var(--light-blue);
+        font-weight: normal;
+        opacity: 1;
+      }
+    }
+  }
 
   > section {
     width: 60px;
@@ -36,6 +79,32 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: none;
+  }
+
+  a {
+    font-size: 18px;
+    color: var(--text);
+
+    opacity: 0.7;
+
+    display: flex;
+    align-items: center;
+
+    transition: opacity 200ms ease;
+
+    > svg {
+      margin-right: 10px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.active {
+      font-weight: bold;
+      opacity: 1;
+    }
   }
 
   ul {
@@ -84,31 +153,6 @@ export const Content = styled.div`
 
         margin-left: 10px;
         opacity: 0.7;
-      }
-
-      a {
-        font-size: 18px;
-        color: var(--text);
-
-        opacity: 0.7;
-
-        display: flex;
-        align-items: center;
-
-        transition: opacity 200ms ease;
-
-        > svg {
-          margin-right: 10px;
-        }
-
-        &:hover {
-          opacity: 1;
-        }
-
-        &.active {
-          font-weight: bold;
-          opacity: 1;
-        }
       }
     }
   }

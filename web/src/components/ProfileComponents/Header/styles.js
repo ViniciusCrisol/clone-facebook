@@ -3,21 +3,22 @@ import { fadeIn } from '../../../styles/animations';
 
 export const Container = styled.div`
   border-bottom: 2px solid var(--light-gray-opacity);
-  display: flex;
 
-  img {
-    height: 150px;
-    border-radius: 50%;
-  }
+  display: flex;
+  flex-direction: column;
 
   > div {
-    margin-left: 15px;
-
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+
+    img {
+      height: 150px;
+      border-radius: 50%;
+    }
 
     > main {
+      max-width: 620px;
+      width: 100%;
+      margin-left: 15px;
       position: relative;
 
       h1 {
@@ -113,8 +114,8 @@ export const Container = styled.div`
           padding: 5px;
           border-radius: 10px;
 
-          width: 620px;
-          height: 80px;
+          width: 100%;
+          height: 110px;
 
           background: none;
           resize: none;
@@ -122,51 +123,35 @@ export const Container = styled.div`
         }
       }
     }
+  }
 
-    footer {
-      height: 50px;
+  footer {
+    height: 50px;
 
-      display: flex;
-      align-items: center;
+    display: flex;
+    align-items: center;
 
-      ul {
-        width: 100%;
-
-        display: flex;
-        align-items: flex-start;
-
-        li {
-          a {
-            font-size: 18px;
-            line-height: 25px;
-            font-weight: Regular;
-            color: var(--text-opacity);
-
-            &.active {
-              color: var(--text);
-            }
-          }
-
-          & + li {
-            margin-left: 30px;
-          }
-        }
-      }
-    }
-
-    @media (max-width: 1250px) {
+    ul {
       width: 100%;
 
-      main {
-        form {
-          textarea {
-            width: 100%;
-            height: 140px;
+      display: flex;
+      align-items: flex-start;
+
+      li {
+        a {
+          font-size: 18px;
+          line-height: 25px;
+          font-weight: Regular;
+          color: var(--text-opacity);
+
+          &.active {
+            color: var(--text);
           }
         }
-      }
-      footer {
-        display: none;
+
+        & + li {
+          margin-left: 30px;
+        }
       }
     }
   }

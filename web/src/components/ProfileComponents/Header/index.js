@@ -38,9 +38,8 @@ function Header() {
 
   return (
     <Container>
-      <img src={user.avatar_url} alt={user.name} />
-
       <div>
+        <img src={user.avatar_url} alt={user.name} />
         <main>
           <h1>{user.name}</h1>
           <Form onSubmit={handleSubmit} initialData={{ bio: user.bio }}>
@@ -64,25 +63,25 @@ function Header() {
             {modal && <Modal notifications={notifications} />}
           </Form>
         </main>
-        <footer>
-          <ul>
-            <li>
-              <NavLink exact to='/profile'>
-                Posts
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='/profile/information'>Information</NavLink>
-            </li>
-            <li>
-              <NavLink to='/profile/photos'>Photos</NavLink>
-            </li>
-            <li>
-              <NavLink to='/profile/communities'>Communities</NavLink>
-            </li>
-          </ul>
-        </footer>
       </div>
+      <footer>
+        <ul>
+          <li>
+            <NavLink exact to='/profile'>
+              Posts
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/profile/information'>Information</NavLink>
+          </li>
+          <li>
+            <NavLink to='/profile/photos'>Photos</NavLink>
+          </li>
+          <li>
+            <NavLink to='/profile/communities'>Communities</NavLink>
+          </li>
+        </ul>
+      </footer>
     </Container>
   );
 }

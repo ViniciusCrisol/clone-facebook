@@ -12,17 +12,27 @@ import {
 
 import { useAuth } from '../../Hooks/AuthContext';
 
-import { Container, Content } from './styles';
+import { Container, MenuContainer } from './styles';
 
 function Menu() {
   const { user, signOut } = useAuth();
 
   return (
     <Container>
-      <Content>
+      <MenuContainer>
         <section>
           <GrFacebookOption color='white' size={35} />
         </section>
+
+        <div>
+          <NavLink exact to='/feed'>
+            Feed
+          </NavLink>
+
+          <NavLink to='/friends'>Friends</NavLink>
+
+          <NavLink to='/profile'>Profile</NavLink>
+        </div>
 
         <ul>
           <div>
@@ -61,7 +71,7 @@ function Menu() {
             </NavLink>
           </li>
         </ul>
-      </Content>
+      </MenuContainer>
     </Container>
   );
 }

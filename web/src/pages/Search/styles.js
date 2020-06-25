@@ -62,8 +62,7 @@ export const NothingFound = styled.div`
   img {
     margin-top: 15px;
 
-    width: 60%;
-    min-width: 555px;
+    width: 80%;
   }
 
   span {

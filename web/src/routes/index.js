@@ -12,7 +12,7 @@ import Friends from '../pages/Friends';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 
-import Search from '../pages/SearchResults';
+import Search from '../pages/Search';
 import Users from '../pages/Users';
 
 export default function Routes() {
