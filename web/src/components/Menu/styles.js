@@ -18,7 +18,7 @@ export const Container = styled.header`
 
     z-index: 40;
 
-    box-shadow: 0px 8px 8px -5px rgba(201, 201, 201, 0.8);
+    box-shadow: 0px 4px 8px -5px rgba(0, 0, 0, 0.4);
     padding: 0 15px;
 
     > div {
