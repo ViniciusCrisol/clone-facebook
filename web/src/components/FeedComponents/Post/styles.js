@@ -24,7 +24,12 @@ export const Container = styled.div`
 
     img {
       width: 50px;
+      height: 50px;
+
       border-radius: 50%;
+
+      object-fit: cover;
+      object-position: center;
     }
 
     div {

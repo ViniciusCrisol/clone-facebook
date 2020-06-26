@@ -50,5 +50,6 @@ routes.put('/response-request/:id/:response', friendRequestController.update);
 // Post
 
 routes.post('/create-post', upload.single('image'), postController.store);
+routes.get('/list-posts', postController.show);
 
 export default routes;
