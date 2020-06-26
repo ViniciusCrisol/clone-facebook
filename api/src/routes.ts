@@ -7,6 +7,7 @@ import SessionController from './controllers/SessionController';
 import SearchController from './controllers/SearchController';
 import FriendRequestController from './controllers/FriendRequestController';
 import AvatarController from './controllers/AvatarController';
+import PostController from './controllers/PostController';
 
 import authMiddleware from './middlewares/auth';
 
@@ -18,6 +19,7 @@ const sessionController = new SessionController();
 const searchController = new SearchController();
 const friendRequestController = new FriendRequestController();
 const avatarController = new AvatarController();
+const postController = new PostController();
 
 // Sign Up/Sign In
 
@@ -44,5 +46,9 @@ routes.get('/search/:search', searchController.store);
 routes.post('/friend-request/:id', friendRequestController.store);
 routes.get('/list-friend-request', friendRequestController.index);
 routes.put('/response-request/:id/:response', friendRequestController.update);
+
+// Post
+
+routes.post('/create-post', upload.single('image'), postController.store);
 
 export default routes;
