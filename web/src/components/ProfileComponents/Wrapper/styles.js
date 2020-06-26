@@ -4,4 +4,7 @@ import { fadeIn } from '../../../styles/animations';
 export const Content = styled.div`
   flex: 1;
   animation: 700ms ${fadeIn} ease;
+
+  display: flex;
+  justify-content: center;
 `;

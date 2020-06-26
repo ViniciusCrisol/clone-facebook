@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-height: 540px;
+  max-width: 500px;
 
   margin-top: 30px;
 
@@ -44,7 +44,6 @@ export const Container = styled.div`
   main {
     flex: 1;
     padding: 25px 0;
-    height: 100%;
 
     p {
       font-size: 14px;
@@ -52,10 +51,9 @@ export const Container = styled.div`
     }
 
     img {
-      max-height: 270px;
-      max-width: 100%;
+      width: 100%;
 
-      margin: 25px 0;
+      margin: 15px auto;
       border-radius: 10px;
 
       object-fit: cover;

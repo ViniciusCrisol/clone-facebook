@@ -13,8 +13,6 @@ function feed() {
       <SearchBar />
       <HeaderFeed />
       <CreatePost />
-
-      <Post />
     </Container>
   );
 }
