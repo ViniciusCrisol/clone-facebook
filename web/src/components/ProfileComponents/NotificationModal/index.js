@@ -38,9 +38,7 @@ function NotificatioModal({ notifications }) {
         </main>
       ) : (
         <>
-          <h2>
-            nothing here <br /> =(
-          </h2>
+          <h2>All clean !</h2>
         </>
       )}
     </Container>

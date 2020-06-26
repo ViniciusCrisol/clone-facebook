@@ -10,4 +10,11 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  h1 {
+    margin: 30px auto;
+
+    text-align: center;
+    color: var(--light-text);
+  }
 `;

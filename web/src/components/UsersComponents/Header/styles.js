@@ -16,7 +16,10 @@ export const Content = styled.div`
 
   img {
     height: 150px;
+    width: 150px;
+
     border-radius: 50%;
+    object-fit: cover;
   }
 
   button {
@@ -60,6 +63,7 @@ export const Content = styled.div`
 
   main {
     margin-left: 30px;
+    flex: 1;
 
     h1 {
       font-size: 30px;
@@ -73,7 +77,7 @@ export const Content = styled.div`
       border-radius: 10px;
 
       max-width: 620px;
-      width: 70%;
+      width: 75%;
       height: 80px;
     }
   }

@@ -19,16 +19,13 @@ export const Container = styled.div`
   border-radius: 10px;
 
   padding: 15px;
+  margin: 7.5px 15px;
 
   display: flex;
   align-items: center;
 
   font-size: 20px;
   color: var(--light-gray);
-
-  & + div {
-    margin-left: 15px;
-  }
 
   div {
     display: flex;

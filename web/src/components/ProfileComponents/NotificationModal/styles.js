@@ -19,7 +19,6 @@ export const Container = styled.div`
     margin: 30px auto;
 
     text-align: center;
-    text-transform: uppercase;
     color: var(--light-text);
   }
 

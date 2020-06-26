@@ -19,15 +19,21 @@ function Friends() {
 
   return (
     <Container>
-      {friends.map((friend) => (
-        <UserContainer
-          key={friend.id}
-          id={friend.id}
-          name={friend.name}
-          location={friend.location}
-          avatar_url={friend.avatar_url}
-        />
-      ))}
+      {friends.length > 0 ? (
+        <>
+          {friends.map((friend) => (
+            <UserContainer
+              key={friend.id}
+              id={friend.id}
+              name={friend.name}
+              location={friend.location}
+              avatar_url={friend.avatar_url}
+            />
+          ))}
+        </>
+      ) : (
+        <h1>You do not have friends?</h1>
+      )}
     </Container>
   );
 }

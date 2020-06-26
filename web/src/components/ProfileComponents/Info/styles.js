@@ -46,7 +46,7 @@ export const CreateContainer = styled.div`
   box-shadow: 0px 3px 0px var(--light-gray);
   border: 2px dashed var(--light-gray);
 
-  margin: 15px;
+  margin: 7.5px 15px;
 
   display: flex;
   align-items: center;

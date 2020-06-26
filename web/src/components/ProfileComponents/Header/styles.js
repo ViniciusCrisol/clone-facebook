@@ -48,9 +48,8 @@ export const Container = styled.div`
       height: 150px;
       width: 150px;
 
-      object-fit: cover;
-
       border-radius: 50%;
+      object-fit: cover;
     }
 
     > main {

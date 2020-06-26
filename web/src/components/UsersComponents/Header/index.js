@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MdPersonAdd } from 'react-icons/md';
 import { toast } from 'react-toastify';
 
@@ -8,7 +8,13 @@ import Info from '../Info';
 import api from '../../../services/api';
 
 function Header({ user }) {
-  const [friendRequest, setFriendRequest] = useState(user.friend_request);
+  const [friendRequest, setFriendRequest] = useState(false);
+
+  console.log(user.friend_request);
+
+  useEffect(() => {
+    setFriendRequest(user.friend_request);
+  }, [user.friend_request]);
 
   async function addFriend() {
     setFriendRequest(true);

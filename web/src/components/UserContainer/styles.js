@@ -20,6 +20,8 @@ export const Container = styled(Link)`
   img {
     height: 100%;
     width: 100px;
+
+    object-fit: cover;
   }
 
   > div {
