@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Form } from '@rocketseat/unform';
 
-export const Container = styled.div`
+export const Container = styled(Form)`
   height: 80px;
 
   margin-top: 30px;
@@ -16,10 +17,17 @@ export const Container = styled.div`
 
   img {
     width: 50px;
+    height: 50px;
+
     border-radius: 50%;
+
+    object-fit: cover;
+    object-position: center;
+
+    flex-shrink: none;
   }
 
-  input {
+  > input {
     flex: 1;
     padding: 25px;
   }
@@ -29,6 +37,33 @@ export const Container = styled.div`
 
     display: flex;
     align-items: center;
+
+    > label {
+      display: flex;
+      flex-shrink: none;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+      transition: 200ms ease;
+
+      svg {
+        color: var(--light-text);
+        transition: 200ms ease;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+
+        svg {
+          color: var(--light-blue);
+        }
+      }
+
+      > input {
+        display: none;
+      }
+    }
 
     button {
       background: none;

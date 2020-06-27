@@ -4,7 +4,7 @@ export async function up(knex: Knex) {
   return knex.schema.createTable('posts', (table) => {
     table.increments('id').primary();
     table.integer('user').notNullable().references('id').inTable('users');
-    table.string('image').notNullable();
+    table.string('image');
     table.string('text').notNullable();
     table.timestamp('created_at').defaultTo(knex.fn.now());
   });

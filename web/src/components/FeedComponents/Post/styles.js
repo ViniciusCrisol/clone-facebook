@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 500px;
+  max-width: 600px;
 
   margin-top: 30px;
 
   border-radius: 10px;
+  border: 2px solid var(--light-gray-opacity);
   background-color: white;
   box-shadow: 0px 3px 1px var(--light-gray-opacity);
 
@@ -52,6 +53,7 @@ export const Container = styled.div`
 
     img {
       width: 100%;
+      max-height: 450px;
 
       margin: 15px auto;
       border-radius: 10px;

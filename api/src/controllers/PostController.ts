@@ -16,7 +16,7 @@ class FriendRequestController {
     } catch {
       return res
         .status(400)
-        .json({ error: 'Error, the post could not be created. Try again !' });
+        .json({ error: 'Error, the post could not be created!' });
     }
   }
 
@@ -24,7 +24,9 @@ class FriendRequestController {
     const { userId } = req;
 
     try {
-      const response = await knex('posts').where('user', userId);
+      const response = await knex('posts')
+        .where('user', userId)
+        .orderBy('id', 'desc');
 
       const postsList = response.map((post) => post);
 
