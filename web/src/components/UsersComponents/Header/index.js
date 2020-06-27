@@ -10,8 +10,6 @@ import api from '../../../services/api';
 function Header({ user }) {
   const [friendRequest, setFriendRequest] = useState(false);
 
-  console.log(user.friend_request);
-
   useEffect(() => {
     setFriendRequest(user.friend_request);
   }, [user.friend_request]);

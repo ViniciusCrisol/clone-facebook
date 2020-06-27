@@ -52,17 +52,16 @@ export const LoadMoreButton = styled.button`
 `;
 
 export const NothingFound = styled.div`
-  flex: 1;
+  height: 60%;
+  width: 60%;
 
-  margin-top: 30px;
-
-  display: flex;
-  flex-direction: column;
+  margin: 30px auto;
+  text-align: center;
 
   img {
     margin-top: 15px;
 
-    width: 80%;
+    width: 100%;
   }
 
   span {

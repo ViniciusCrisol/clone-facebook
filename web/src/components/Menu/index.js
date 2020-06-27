@@ -20,10 +20,6 @@ function Menu() {
   return (
     <Container>
       <MenuContainer>
-        <section>
-          <GrFacebookOption color='white' size={35} />
-        </section>
-
         <div>
           <NavLink exact to='/feed'>
             Feed
@@ -33,6 +29,10 @@ function Menu() {
 
           <NavLink to='/profile'>Profile</NavLink>
         </div>
+
+        <section>
+          <GrFacebookOption color='white' size={35} />
+        </section>
 
         <ul>
           <div>

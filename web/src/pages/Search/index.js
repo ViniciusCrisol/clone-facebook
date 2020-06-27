@@ -67,9 +67,9 @@ function searchResults() {
               </>
             ) : (
               <NothingFound>
+                <img src={background} alt='Nothing found' />
                 <h1>Nothing Found...</h1>
                 <span>(Try another search!)</span>
-                <img src={background} alt='Nothing found' />
               </NothingFound>
             )}
           </>

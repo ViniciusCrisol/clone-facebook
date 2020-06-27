@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   max-width: 600px;
+  width: 100%;
 
   margin-top: 30px;
 
@@ -10,14 +11,13 @@ export const Container = styled.div`
   background-color: white;
   box-shadow: 0px 3px 1px var(--light-gray-opacity);
 
-  padding: 25px;
+  padding: 15px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   > header {
-    height: 60px;
     width: 100%;
 
     display: flex;
@@ -44,7 +44,7 @@ export const Container = styled.div`
 
   main {
     flex: 1;
-    padding: 25px 0;
+    padding: 15px 0;
 
     p {
       font-size: 14px;
@@ -64,7 +64,6 @@ export const Container = styled.div`
   }
 
   footer {
-    height: 60px;
     width: 100%;
 
     display: flex;

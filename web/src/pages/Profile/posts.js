@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 import ProfileWrapper from '../../components/ProfileComponents/Wrapper';
-import CreatePost from '../../components/FeedComponents/CreatePost';
 import Post from '../../components/FeedComponents/Post';
+import Explore from '../../components/ProfileComponents/Explore';
 
 import api from '../../services/api';
 
@@ -26,7 +26,7 @@ function Profile() {
 
   return (
     <ProfileWrapper>
-      <div>
+      <>
         {posts.length > 0 ? (
           <>
             {posts.map((post) => (
@@ -34,11 +34,9 @@ function Profile() {
             ))}
           </>
         ) : (
-          <div>
-            <CreatePost />
-          </div>
+          <Explore />
         )}
-      </div>
+      </>
     </ProfileWrapper>
   );
 }

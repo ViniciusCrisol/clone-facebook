@@ -6,6 +6,7 @@ import UserController from './controllers/UserController';
 import SessionController from './controllers/SessionController';
 import SearchController from './controllers/SearchController';
 import FriendRequestController from './controllers/FriendRequestController';
+import FriendController from './controllers/FriendController';
 import AvatarController from './controllers/AvatarController';
 import PostController from './controllers/PostController';
 
@@ -18,6 +19,7 @@ const userController = new UserController();
 const sessionController = new SessionController();
 const searchController = new SearchController();
 const friendRequestController = new FriendRequestController();
+const friendController = new FriendController();
 const avatarController = new AvatarController();
 const postController = new PostController();
 
@@ -47,9 +49,14 @@ routes.post('/friend-request/:id', friendRequestController.store);
 routes.get('/list-friend-request', friendRequestController.index);
 routes.put('/response-request/:id/:response', friendRequestController.update);
 
+// Friends
+
+routes.get('/friend-list', friendController.index);
+
 // Post
 
 routes.post('/create-post', upload.single('image'), postController.store);
-routes.get('/list-posts', postController.show);
+routes.get('/list-posts/:id*?', postController.show);
+routes.get('/posts', postController.index);
 
 export default routes;

@@ -55,7 +55,7 @@ export const Container = styled.div`
     > main {
       max-width: 620px;
       width: 100%;
-      margin-left: 15px;
+      margin-left: 30px;
       position: relative;
 
       h1 {

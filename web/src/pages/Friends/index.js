@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-import { Container } from './styles';
+import { Container, NoFriends } from './styles';
 
 import api from '../../services/api';
 import UserContainer from '../../components/UserContainer';
+
+import friendsImage from '../../assets/friends.svg';
 
 function Friends() {
   const [friends, setFriends] = useState([]);
@@ -32,7 +34,11 @@ function Friends() {
           ))}
         </>
       ) : (
-        <h1>You do not have friends?</h1>
+        <NoFriends>
+          <img src={friendsImage} alt='Friends' />
+          <h1>You do not have friends?</h1>
+          <h2>Meet new people !</h2>
+        </NoFriends>
       )}
     </Container>
   );
