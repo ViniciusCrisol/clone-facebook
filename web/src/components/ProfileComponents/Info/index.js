@@ -50,8 +50,6 @@ function InfoContainer() {
 
   return (
     <Wrapper>
-      {/* Birthday */}
-
       {!user.birthday ? (
         <CreateContainer>
           {!openBirthday ? (
@@ -80,8 +78,6 @@ function InfoContainer() {
         </Container>
       )}
 
-      {/* Location */}
-
       {!user.location ? (
         <CreateContainer>
           {!openLocation ? (
@@ -109,8 +105,6 @@ function InfoContainer() {
           </div>
         </Container>
       )}
-
-      {/* Work Place */}
 
       {!user.work_place ? (
         <CreateContainer>

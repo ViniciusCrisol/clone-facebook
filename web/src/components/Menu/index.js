@@ -1,7 +1,7 @@
 import React from 'react';
-import { GrFacebookOption } from 'react-icons/gr';
-import { BsBoxArrowLeft } from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
+import { BsBoxArrowLeft } from 'react-icons/bs';
+import { GrFacebookOption } from 'react-icons/gr';
 import {
   FiBookOpen,
   FiMessageSquare,
