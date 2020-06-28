@@ -1,6 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react-hooks/rules-of-hooks */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -14,7 +12,7 @@ import Loading from '../../components/Loading';
 
 import background from '../../assets/nothing_found.svg';
 
-function searchResults() {
+function SearchResults() {
   const location = useParams();
   const history = useHistory();
   const { user } = useAuth();
@@ -25,24 +23,24 @@ function searchResults() {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
 
-  async function search() {
+  const search = useCallback(async () => {
     try {
       const response = await api.get(`search/${currentPage}`, {
         headers: { page, id: user.id },
       });
       setPage(page + 1);
 
-      setUsers([...users, ...response.data]);
+      setUsers((oldUsers) => [...oldUsers, ...response.data]);
       setLoading(false);
     } catch (error) {
       toast(error.response.data.error);
       history.push('/');
     }
-  }
+  }, [currentPage, history, page, user.id]);
 
   useEffect(() => {
     search();
-  }, [currentPage]);
+  }, [search]);
 
   return (
     <Wrapper>
@@ -80,10 +78,10 @@ function searchResults() {
       </Container>
 
       {users.length === 27 && (
-        <LoadMoreButton onClick={search}>Load More</LoadMoreButton>
+        <LoadMoreButton onClick={() => search()}>Load More</LoadMoreButton>
       )}
     </Wrapper>
   );
 }
 
-export default searchResults;
+export default SearchResults;
