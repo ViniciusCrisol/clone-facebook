@@ -7,6 +7,7 @@ import api from '../../services/api';
 
 import Header from '../../components/UsersComponents/Header';
 import Posts from '../../components/UsersComponents/Posts';
+import Loading from '../../components/Loading';
 
 function UserPage() {
   const location = useParams();
@@ -14,6 +15,7 @@ function UserPage() {
   const currentPage = location.id;
   const [user, setUser] = useState([]);
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function loadUser() {
@@ -29,14 +31,21 @@ function UserPage() {
       const response = await api.get(`/list-posts/${currentPage}`);
 
       setPosts(response.data);
+      setLoading(false);
     }
     loadPosts();
   }, [currentPage, posts]);
 
   return (
     <Container>
-      <Header user={user} />
-      <Posts key={posts.id} posts={posts} />
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <Header user={user} />
+          <Posts key={posts.id} posts={posts} />
+        </>
+      )}
     </Container>
   );
 }

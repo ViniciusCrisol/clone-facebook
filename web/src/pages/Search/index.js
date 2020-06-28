@@ -10,6 +10,7 @@ import api from '../../services/api';
 import { useAuth } from '../../Hooks/AuthContext';
 
 import UserContainer from '../../components/UserContainer';
+import Loading from '../../components/Loading';
 
 import background from '../../assets/nothing_found.svg';
 
@@ -51,7 +52,9 @@ function searchResults() {
         </span>
       </div>
       <Container>
-        {!loading && (
+        {loading ? (
+          <Loading />
+        ) : (
           <>
             {users.length > 0 ? (
               <>
