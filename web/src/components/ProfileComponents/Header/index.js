@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FiEdit, FiBell } from 'react-icons/fi';
 import { AiOutlineCamera } from 'react-icons/ai';
 
-import api from '../../../services/api';
+import { Container } from './styles';
+
 import NotificationModal from '../NotificationModal';
 import { useAuth } from '../../../Hooks/AuthContext';
 
-import { Container } from './styles';
+import api from '../../../services/api';
 
 function Header() {
   const { user, updateUser } = useAuth();
@@ -39,15 +40,15 @@ function Header() {
     }
   }
 
+  const loadNotifications = useCallback(async () => {
+    const response = await api.get('list-friend-request');
+
+    setNotifications(response.data);
+  }, []);
+
   useEffect(() => {
-    async function loadNotifications() {
-      const response = await api.get('list-friend-request');
-
-      setNotifications(response.data);
-    }
-
     loadNotifications();
-  }, [notifications]);
+  }, [loadNotifications]);
 
   return (
     <Container>

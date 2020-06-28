@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { MdPersonAdd } from 'react-icons/md';
 import { toast } from 'react-toastify';
+import { MdPersonAdd } from 'react-icons/md';
 
 import { Container, Content } from './styles';
 
 import Info from '../Info';
+
 import api from '../../../services/api';
 
 function Header({ user }) {
-  const [friendRequest, setFriendRequest] = useState(false);
+  const [friendRequest, setFriendRequest] = useState();
 
   useEffect(() => {
     setFriendRequest(user.friend_request);
@@ -48,11 +49,7 @@ function Header({ user }) {
           <p>{user.bio}</p>
         </main>
       </Content>
-      <Info
-        birthday={user.birthday}
-        work_place={user.work_place}
-        location={user.location}
-      />
+      <Info user={user} />
     </Container>
   );
 }

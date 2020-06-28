@@ -7,6 +7,7 @@ import { Container, Notification } from './styles';
 
 function NotificatioModal({ notifications }) {
   async function handleSubmit({ response, id }) {
+    console.log(response);
     api.put(`response-request/${id}/${response}`);
   }
 
@@ -20,14 +21,14 @@ function NotificatioModal({ notifications }) {
               <footer>
                 <button
                   onClick={() =>
-                    handleSubmit({ response: true, id: notification.id })
+                    handleSubmit({ response: 'accepted', id: notification.id })
                   }
                 >
                   <AiOutlineCheck size={20} />
                 </button>
                 <button
                   onClick={() =>
-                    handleSubmit({ response: false, id: notification.id })
+                    handleSubmit({ response: 'declined', id: notification.id })
                   }
                 >
                   <AiOutlineDelete size={20} />

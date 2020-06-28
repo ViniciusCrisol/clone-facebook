@@ -65,33 +65,25 @@ class FriendRequestController {
   }
 
   async update(req: Request, res: Response) {
-    try {
-      const { userId } = req;
-      const { id: notificationId, response: userResponse } = req.params;
+    const { userId } = req;
+    const { id, response } = req.params;
 
-      if (Boolean(userResponse) === true) {
-        const { user: friendId } = await knex('friend_requests')
-          .where('id', notificationId)
-          .first();
-
-        await knex('friends').insert({
-          user: userId,
-          friend: friendId,
-        });
-
-        await knex('friends').insert({
-          user: friendId,
-          friend: userId,
-        });
-
-        await knex('friend_requests').where('id', notificationId).del();
-
-        return res.json({ ok: true });
-      } else {
-        await knex('friend_requests').where('id', notificationId).del();
-      }
-    } catch {
-      return res.status(400).json({ error: 'Error. Try again' });
+    if (response === 'accepted') {
+      const { user: friendId } = await knex('friend_requests')
+        .where('id', id)
+        .first();
+      await knex('friends').insert({
+        user: userId,
+        friend: friendId,
+      });
+      await knex('friends').insert({
+        user: friendId,
+        friend: userId,
+      });
+      await knex('friend_requests').where('id', id).del();
+      return res.json({ ok: true });
+    } else {
+      await knex('friend_requests').where('id', id).del();
     }
   }
 }

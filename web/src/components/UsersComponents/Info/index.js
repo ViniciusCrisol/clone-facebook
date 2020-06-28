@@ -3,32 +3,32 @@ import { MdCake, MdLocationOn, MdCardTravel } from 'react-icons/md';
 
 import { Wrapper, Container } from './styles';
 
-function InfoContainer({ birthday, work_place, location }) {
+function InfoContainer({ user }) {
   return (
     <Wrapper>
-      {birthday && (
+      {user.birthday && (
         <Container>
           <div>
             <MdCake size={30} />
-            {birthday}
+            {user.birthday}
           </div>
         </Container>
       )}
 
-      {location && (
+      {user.location && (
         <Container>
           <div>
             <MdLocationOn size={30} />
-            {location}
+            {user.location}
           </div>
         </Container>
       )}
 
-      {work_place && (
+      {user.work_place && (
         <Container>
           <div>
             <MdCardTravel size={30} />
-            {work_place}
+            {user.work_place}
           </div>
         </Container>
       )}

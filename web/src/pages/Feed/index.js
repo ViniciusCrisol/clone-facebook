@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 import { Container } from './styles';
 
-import api from '../../services/api';
-
 import CreatePost from '../../components/FeedComponents/CreatePost';
 import SearchBar from '../../components/FeedComponents/SearchBar';
 import HeaderFeed from '../../components/FeedComponents/Header';
 import Post from '../../components/FeedComponents/Post';
 import Loading from '../../components/Loading';
+
+import api from '../../services/api';
 
 function Feed() {
   const [posts, setPosts] = useState([]);

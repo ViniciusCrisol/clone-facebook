@@ -11,30 +11,30 @@ import Loading from '../../components/Loading';
 
 function UserPage() {
   const location = useParams();
+  const { id } = location;
 
-  const currentPage = location.id;
   const [user, setUser] = useState([]);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function loadUser() {
-      const response = await api.get(`/show-user/${currentPage}`);
+      const response = await api.get(`/show-user/${id}`);
 
       setUser(response.data);
     }
     loadUser();
-  }, [currentPage]);
+  }, [id]);
 
   useEffect(() => {
     async function loadPosts() {
-      const response = await api.get(`/list-posts/${currentPage}`);
+      const response = await api.get(`/list-posts/${id}`);
 
       setPosts(response.data);
       setLoading(false);
     }
     loadPosts();
-  }, [currentPage, posts]);
+  }, [id]);
 
   return (
     <Container>
