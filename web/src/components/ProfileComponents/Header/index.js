@@ -60,10 +60,7 @@ function Header() {
             name='avatar'
             onChange={(e) => handleSubmitAvatar(e.target.files[0])}
           />
-          <AiOutlineCamera
-            size={25}
-            color={openNotifications ? '#5085e8' : ''}
-          />
+          <AiOutlineCamera size={25} />
         </label>
 
         <main>
