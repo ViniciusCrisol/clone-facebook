@@ -15,11 +15,10 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
+  flex: 1;
   z-index: 20;
   padding: 50px 15px;
   box-shadow: -8px 0px 8px -5px rgba(201, 201, 201, 0.4);
-
-  flex: 1;
 `;
 
 export const Layout = styled.main`

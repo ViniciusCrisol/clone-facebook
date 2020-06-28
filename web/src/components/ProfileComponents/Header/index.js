@@ -78,11 +78,14 @@ function Header() {
               onClick={() => setEditInput(!editInput)}
               type={!editInput ? 'submit' : 'button'}
             >
-              <FiEdit size={30} color={editInput ? '#5085e8' : ''} />
+              <FiEdit size={30} color={editInput ? 'var(--light-blue)' : ''} />
             </button>
 
             <button onClick={() => setOpenNotifications(!openNotifications)}>
-              <FiBell size={30} color={openNotifications ? '#5085e8' : ''} />
+              <FiBell
+                size={30}
+                color={openNotifications ? 'var(--light-blue)' : ''}
+              />
               <span>{notifications.length}</span>
             </button>
 

@@ -51,7 +51,7 @@ function CreatePost() {
             name='image'
             onChange={(e) => setImage(e.target.files[0])}
           />
-          <BsImages size={22} />
+          <BsImages size={22} color={image ? 'var(--light-blue)' : ''} />
         </label>
 
         <button type='submit'>
