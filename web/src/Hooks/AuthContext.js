@@ -20,7 +20,7 @@ function AuthProvider({ children }) {
   });
 
   const checkToken = useCallback(async () => {
-    const token = data.token;
+    const { token } = data;
 
     if (token) {
       try {

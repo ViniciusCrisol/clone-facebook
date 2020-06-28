@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 import { Container, NoFriends } from './styles';
 
-import api from '../../services/api';
-
 import UserContainer from '../../components/UserContainer';
 import Loading from '../../components/Loading';
 
 import friendsImage from '../../assets/friends.svg';
+
+import api from '../../services/api';
 
 function Friends() {
   const [friends, setFriends] = useState([]);
@@ -29,7 +29,6 @@ function Friends() {
         <Loading />
       ) : (
         <>
-          {' '}
           {friends.length > 0 ? (
             <>
               {friends.map((friend) => (
