@@ -15,25 +15,19 @@ function UserPage() {
 
   const [user, setUser] = useState([]);
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function loadUser() {
-      const response = await api.get(`/show-user/${id}`);
+    async function loadData() {
+      const user = await api.get(`/show-user/${id}`);
+      const posts = await api.get(`/list-posts/${id}`);
 
-      setUser(response.data);
-    }
-    loadUser();
-  }, [id]);
+      setUser(user.data);
+      setPosts(posts.data);
 
-  useEffect(() => {
-    async function loadPosts() {
-      const response = await api.get(`/list-posts/${id}`);
-
-      setPosts(response.data);
       setLoading(false);
     }
-    loadPosts();
+    loadData();
   }, [id]);
 
   return (
@@ -43,7 +37,7 @@ function UserPage() {
       ) : (
         <>
           <Header user={user} />
-          <Posts key={posts.id} posts={posts} />
+          <Posts posts={posts} />
         </>
       )}
     </Container>

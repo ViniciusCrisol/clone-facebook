@@ -21,10 +21,10 @@ function Profile() {
       } catch (error) {
         toast(error.response.data.error);
       }
+      setLoading(false);
     }
 
     getPosts();
-    setLoading(false);
   }, []);
 
   return (

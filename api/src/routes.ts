@@ -47,7 +47,7 @@ routes.get('/search/:search', searchController.store);
 
 routes.post('/friend-request/:id', friendRequestController.store);
 routes.get('/list-friend-request', friendRequestController.index);
-routes.put('/response-request/:id/:response*?', friendRequestController.update);
+routes.put('/response-request/:id/:response', friendRequestController.update);
 
 // Friends
 

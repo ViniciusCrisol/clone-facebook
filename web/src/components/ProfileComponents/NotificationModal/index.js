@@ -7,7 +7,6 @@ import { Container, Notification } from './styles';
 
 function NotificatioModal({ notifications }) {
   async function handleSubmit({ response, id }) {
-    console.log(response);
     api.put(`response-request/${id}/${response}`);
   }
 

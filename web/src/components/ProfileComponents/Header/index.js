@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -40,15 +40,14 @@ function Header() {
     }
   }
 
-  const loadNotifications = useCallback(async () => {
-    const response = await api.get('list-friend-request');
-
-    setNotifications(response.data);
-  }, []);
-
   useEffect(() => {
-    loadNotifications();
-  }, [loadNotifications]);
+    async function getNotifications() {
+      const response = await api.get('list-friend-request');
+      setNotifications(response.data);
+    }
+
+    getNotifications();
+  }, [notifications]);
 
   return (
     <Container>

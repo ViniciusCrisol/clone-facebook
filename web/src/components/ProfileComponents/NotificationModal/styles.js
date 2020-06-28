@@ -13,7 +13,6 @@ export const Container = styled.div`
   background-color: white;
   border: 4px solid var(--light-gray);
   border-radius: 10px;
-  padding: 7.5px 0 0 0;
 
   h2 {
     margin: 30px auto;
@@ -40,20 +39,25 @@ export const Notification = styled.div`
   width: 94%;
 
   margin: 7.5px auto;
-  padding: 7.5px 12px;
+  padding: 10px;
 
   background-color: var(--light-gray-opacity);
   border-radius: 10px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
   footer {
-    width: min-content;
-    margin: 10px auto 0;
+    height: min-content;
+    margin-top: 25px;
 
     button {
       height: 30px;
-      width: 30px;
+      width: 90px;
 
-      border-radius: 50%;
+      border-radius: 15px;
       background-color: var(--light-blue);
 
       color: white;
