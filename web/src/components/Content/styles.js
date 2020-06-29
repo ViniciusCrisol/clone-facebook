@@ -23,6 +23,8 @@ export const Container = styled.div`
 
 export const Layout = styled.main`
   flex: 1;
-  margin: 0 auto;
+  height: 100%;
   max-width: 1025px;
+
+  margin: 0 auto;
 `;

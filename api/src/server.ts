@@ -9,11 +9,17 @@ const app = express();
 const io = socketio(3131);
 
 const connectedUsers: any = {};
+const messages: any = [];
 
 io.on('connection', (socket) => {
   const { user_id } = socket.handshake.query;
 
   connectedUsers[user_id] = socket.id;
+
+  socket.on('sendMessage', (data) => {
+    messages.push(data);
+    socket.broadcast.emit('recivedMessage', messages);
+  });
 });
 
 app.use((req, res, next) => {
