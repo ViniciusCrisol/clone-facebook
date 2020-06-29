@@ -15,6 +15,8 @@ import SignUp from '../pages/SignUp';
 import Search from '../pages/Search';
 import Users from '../pages/Users';
 
+import Message from '../pages/Messages';
+
 export default function Routes() {
   return (
     <Switch>
@@ -32,6 +34,8 @@ export default function Routes() {
       <Route path='/search-profile/:id' component={Users} isPrivate />
 
       <Route path='/friends' component={Friends} isPrivate />
+
+      <Route path='/messages' component={Message} isPrivate />
     </Switch>
   );
 }

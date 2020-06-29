@@ -1,6 +1,7 @@
 declare namespace Express {
   interface Request {
     userId: number;
-    response: boolean;
+    connectedUsers: any;
+    io: any;
   }
 }

@@ -1,9 +1,26 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
+import socketio from 'socket.io';
+
 import routes from './routes';
 
 const app = express();
+const io = socketio(3131);
+
+const connectedUsers: any = {};
+
+io.on('connection', (socket) => {
+  const { user_id } = socket.handshake.query;
+
+  connectedUsers[user_id] = socket.id;
+});
+
+app.use((req, res, next) => {
+  req.io = io;
+  req.connectedUsers = connectedUsers;
+  return next();
+});
 
 app.use(cors());
 app.use(express.json());
