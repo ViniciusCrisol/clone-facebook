@@ -25,9 +25,5 @@ export const Container = styled.ul`
         border-bottom: 2px solid var(--light-blue);
       }
     }
-
-    & + li {
-      margin-left: 30px;
-    }
   }
 `;

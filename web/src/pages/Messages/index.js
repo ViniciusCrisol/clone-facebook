@@ -18,26 +18,36 @@ function Messages() {
     addMessage(message);
   });
 
-  const addMessage = useCallback((message) => {
+  const sendMessage = useCallback(
+    (data) => {
+      const message = {
+        user: user.id,
+        author: user.name,
+        message: data.message,
+      };
+
+      socket.emit('sendMessage', message);
+      setMessages((oldMessages) => [...oldMessages, message]);
+    },
+    [socket, user.id, user.name]
+  );
+
+  function addMessage(message) {
     setMessages(message);
-  }, []);
-
-  function sendMessage(data) {
-    const message = {
-      author: user.name,
-      message: data.message,
-    };
-
-    socket.emit('sendMessage', message);
   }
 
   return (
     <Container>
       <main>
         {messages.map((message) => (
-          <div key={Math.random()}>
-            <strong>{message.author}: </strong>
-            {message.message}
+          <div
+            className={message.user === user.id ? 'myMessage' : ''}
+            key={Math.random()}
+          >
+            <p>
+              <strong>{message.author}: </strong>
+              {message.message}
+            </p>
           </div>
         ))}
       </main>

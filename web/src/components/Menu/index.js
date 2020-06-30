@@ -65,11 +65,6 @@ function Menu() {
               <FiUser size={15} /> Friends
             </NavLink>
           </li>
-          <li>
-            <NavLink to='/communities'>
-              <FiUsers size={15} /> Communities
-            </NavLink>
-          </li>
         </ul>
       </MenuContainer>
     </Container>

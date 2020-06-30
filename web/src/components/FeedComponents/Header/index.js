@@ -8,12 +8,6 @@ function Header() {
       <li className='active'>
         <button>Posts</button>
       </li>
-      <li>
-        <button>Photos</button>
-      </li>
-      <li>
-        <button>Communities</button>
-      </li>
     </Container>
   );
 }

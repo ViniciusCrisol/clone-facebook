@@ -105,12 +105,6 @@ function Header() {
           <li>
             <NavLink to='/profile/information'>Information</NavLink>
           </li>
-          <li>
-            <NavLink to='/profile/photos'>Photos</NavLink>
-          </li>
-          <li>
-            <NavLink to='/profile/communities'>Communities</NavLink>
-          </li>
         </ul>
       </footer>
     </Container>
