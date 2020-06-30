@@ -33,7 +33,6 @@ function Messages() {
 
   return (
     <Container>
-      <h1>messages</h1>
       <main>
         {messages.map((message) => (
           <div key={Math.random()}>
@@ -41,12 +40,11 @@ function Messages() {
             {message.message}
           </div>
         ))}
-        amor
       </main>
 
       <Form onSubmit={sendMessage}>
-        <Input name='message' />
-        <button type='submit'>Enviar</button>
+        <Input name='message' autoComplete='off' />
+        <button type='submit'>send</button>
       </Form>
     </Container>
   );

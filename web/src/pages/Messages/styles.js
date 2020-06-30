@@ -9,25 +9,49 @@ export const Container = styled.div`
   justify-content: space-between;
 
   main {
-    background: lightblue;
-
     flex: 1;
+
+    box-shadow: 0px 3px 1px var(--light-gray-opacity);
+    border: 2px solid var(--light-gray-opacity);
+    border-radius: 10px;
+
+    padding: 30px;
+    margin: 15px 0;
   }
 
   form {
     width: 100%;
 
-    background: lightcoral;
-
     display: flex;
 
     input {
       flex: 1;
+
+      height: 60px;
+
+      margin-top: 0px;
+      padding: 0 25px;
+
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0px 3px 1px var(--light-gray-opacity);
     }
 
     button {
-      margin-left: 15px;
       width: 120px;
+
+      margin-left: 15px;
+      border-radius: 10px;
+      background: var(--light-blue);
+
+      text-transform: uppercase;
+      color: white;
+
+      transition: filter 200ms;
+
+      &:hover {
+        filter: brightness(1.1);
+      }
     }
   }
 `;
