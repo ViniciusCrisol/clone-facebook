@@ -26,6 +26,7 @@ function Menu() {
           </NavLink>
 
           <NavLink to='/friends'>Friends</NavLink>
+          <NavLink to='/messages'>Messages</NavLink>
 
           <NavLink to='/profile'>Profile</NavLink>
         </div>
