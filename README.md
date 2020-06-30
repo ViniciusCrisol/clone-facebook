@@ -26,7 +26,7 @@
 * Find by persons;
 * Make friendships;
 * Create posts for everyone to see;
-* Create posts to explain yourseld
+* Create posts to explain yourself;
 * Make your profile look like you;
 * Chat with people around the word;
 
